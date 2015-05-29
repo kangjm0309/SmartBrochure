@@ -1,21 +1,46 @@
 package com.example.jay.smart_brochure;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.TabActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Window;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * 메인엑티비티. 탭 뷰 구성.
@@ -31,13 +56,23 @@ public class MainActivity extends TabActivity {
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
 
-    public ArrayList<String[]> devices = new ArrayList<String[]>();
+    private final String LC0000 = "LC0000";
+    private static String url = "http://jung2.maden.kr/beacon_gateway/";
+
+    public ArrayList<String> devices = new ArrayList<String>();
 
     Database data = new Database(this);
+    private BackPressed backbtn;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
             super.onCreate(savedInstanceState);
+        backbtn = new BackPressed(this);
+        mHandler = new Handler();
+
+
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        registerReceiver(mReceiver, filter);
 
         startActivity(new Intent(this, Splash.class)); // Splash
         setContentView(R.layout.activity_main);
@@ -78,11 +113,12 @@ public class MainActivity extends TabActivity {
                 .setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent(this, Around.class);
+        // 주변 기기 수동검색 삭제.
+/*        intent = new Intent(this, Around.class);
         spec = tabHost.newTabSpec("Around")
                 .setIndicator("Around", res.getDrawable(android.R.drawable.sym_action_call))
                 .setContent(intent);
-        tabHost.addTab(spec);
+        tabHost.addTab(spec);*/
 
         intent = new Intent(this, Setting.class);
         spec = tabHost.newTabSpec("Settings")
@@ -119,14 +155,24 @@ public class MainActivity extends TabActivity {
                 public void run() {
                     // 스캔해서 device에서 주소랑 이름 불러와서 리스트에 뿌려줌
                     String[] s = { device.getAddress(), device.getName() };
-                    devices.add(s);
+                    Toast.makeText(getApplicationContext(), device.getAddress(), Toast.LENGTH_SHORT).show();
+                    Log.i("ttt", "자동검색  :  " + device.getAddress());
+                    devices.add(device.getAddress());
+
+                    try {
+                        sendId();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             });
         }
     };
 
     // 스캔 시작 및 중단
-    private void scanLeDevice(final boolean enable) {
+    public void scanLeDevice(final boolean enable) {
         if (enable) {
             // Stops scanning after a pre-defined scan period.
             mHandler.postDelayed(new Runnable() {
@@ -148,4 +194,142 @@ public class MainActivity extends TabActivity {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         }
     }
+
+    // 블루투스 활성화/비활성화 시 자동으로 검색
+    public final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // TODO Auto-generated method stub
+            String action = intent.getAction();
+            if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
+                switch (state) {
+                    case BluetoothAdapter.STATE_ON:
+                        Log.i("ttt", "State_on");
+                        Toast.makeText(getApplicationContext(), "블루투스가 연결되었습니다." + "\n" + "BLE검색 시작", Toast.LENGTH_SHORT).show();
+                        scanLeDevice(true);
+                        break;
+                    case BluetoothAdapter.STATE_OFF:
+                        //Toast.makeText(getApplicationContext(), "블루투스를 다시 연결해주세요.", 3000).show();
+                        Toast.makeText(getApplicationContext(), "블루투스를 다시 연결해주세요.", Toast.LENGTH_SHORT).show();
+                        scanLeDevice(false);
+                        Log.i("ttt", "scanLeDevice(false);");
+                        break;
+                }
+            }
+
+        }
+    };
+
+    @Override
+    public void onBackPressed() {
+        backbtn.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(this, "onDestroy()", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+
+    private void sendId() throws IOException, JSONException {
+        if(devices.size()!=0) {
+            String id = devices.get(0).toString();
+        }
+
+        HashMap<String, Object> mapReqData = new HashMap<String, Object>();
+        mapReqData.put("beacon_id", devices);
+
+        JSONObject beaconObject = new JSONObject(mapReqData);
+        JSONObject dataObject = new JSONObject();
+        JSONArray jsonArray = new JSONArray();
+        JSONArray jArrayBeacon = new JSONArray();
+        jsonArray.put(beaconObject);
+        dataObject.put("req_data", jsonArray);
+        dataObject.put("req_svc", LC0000);
+
+        String dataString = dataObject.toString();
+
+        DefaultHttpClient client = new DefaultHttpClient();
+        try {
+            //android 3.0 부터는 네트워크작업을 UI쓰레드가 아닌 별도의 쓰레드로 돌려야해서
+            if (android.os.Build.VERSION.SDK_INT > 9) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+
+                //Param 설정
+                ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
+                paramList.add(new BasicNameValuePair("JSONData", dataString));
+                //Toast.makeText(getActivity().getApplicationContext(), paramList.toString(), Toast.LENGTH_SHORT).show();
+                //연결지연시
+                HttpParams params = new BasicHttpParams();
+                HttpConnectionParams.setConnectionTimeout(params, 3000);
+                HttpConnectionParams.setSoTimeout(params, 3000);
+                //Json 데이터를 서버로 전송
+                HttpPost httpPost = new HttpPost(url);
+                httpPost.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
+
+                DefaultHttpClient httpclient = new DefaultHttpClient();
+                ResponseHandler<String> reshand = new BasicResponseHandler();
+                String strResponseBody = httpclient.execute(httpPost, reshand);
+                String strResltJsonData = strResponseBody.trim();
+                Log.d("response", "Data::"+strResltJsonData);
+
+                JSONObject joResData = new JSONObject(strResltJsonData);
+                JSONObject jaResData = (JSONObject) ((JSONArray) joResData.get("res_data")).get(0);
+                JSONObject jaRRE = (JSONObject)((JSONArray)jaResData.get("_exBea")).get(0);
+                Log.d("response", "Name::"+jaRRE.get("_ehnm"));
+
+
+                Intent intent = new Intent(this, Around.class);
+                PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+                NotificationCompat.Builder b = new NotificationCompat.Builder(this);
+
+                b.setAutoCancel(true)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .setWhen(System.currentTimeMillis())
+                        .setSmallIcon(R.drawable.ic_launcher)
+                        .setTicker("Hearty365")
+                        .setContentTitle("Default notification")
+                        .setContentText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+                        .setDefaults(Notification.DEFAULT_LIGHTS| Notification.DEFAULT_SOUND)
+                        .setContentIntent(contentIntent)
+                        .setContentInfo("Info");
+
+
+                NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(1, b.build());
+
+                /*
+
+
+                // httpPost.setHeader("Accept", "application/json");
+                 httpPost.setHeader("Content-type", "application/json");
+                //데이터보낸 뒤 서버에서 데이터를 받아오는 과정
+                ResponseHandler<String> reshand = new BasicResponseHandler();
+
+                HttpResponse response = client.execute(httpPost);
+                BufferedReader bufferReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "utf-8"));
+                String line = null;
+                String result = "";
+
+                while ((line = bufferReader.readLine()) != null) {
+                    result += line;
+
+                }*/
+            } else {
+
+            }
+            Log.i("aaaaaaaaaaaaaaaaaaaa", dataString);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+            client.getConnectionManager().shutdown(); // 연결 지연 종료
+        }
+    }
 }
+

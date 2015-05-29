@@ -20,19 +20,20 @@ public class Database {
     public final static String ONOFF = "onoff";
     public final static String ADDRESS = "address";
     public final static String NAME = "name";
+    public final static String Beacon_List = "beacon_list";
 
     String[] list = {ID, ADDRESS, NAME};
+    String[] beacons = {ID, ADDRESS};
     String[] history = {ID, ADDRESS, NAME};
     String[] onoff = { ID, ONOFF };
     // 0---- 1--- 2----
-    // _id title content
-
-    // String[] weather={ID,WEATHER,WIND,TEMP,HIGHTEMP,LOWTEMP}
 
     private static final String DB_CREATE_STATE = "CREATE TABLE " + S_Brochure
             + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,  " + ADDRESS + " TEXT NOT NULL, " + NAME + " TEXT NOT NULL " + ");";
+    private static final String DB_CREATE_LIST = " CREATE TABLE " + Beacon_List + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + ADDRESS + " TEXT NOT NULL " + ");";
     private static final String DB_DESTROY_STATE = "DROP TABLE IF EXISTS "
             + S_Brochure;
+    private static final String DB_DESTROY_LIST = "DROP TABLE IF EXISTS" + Beacon_List;
 
     private Context mContext;
     private DataBaseHelper mHelper;
@@ -46,10 +47,12 @@ public class Database {
 
         public void onCreate(SQLiteDatabase db) {
             db.execSQL(DB_CREATE_STATE);
+            db.execSQL(DB_CREATE_LIST);
         }
 
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             db.execSQL(DB_DESTROY_STATE);
+            db.execSQL(DB_DESTROY_LIST);
         }
     }
 
@@ -69,6 +72,8 @@ public class Database {
     public void flush() {
         mDB.execSQL(DB_DESTROY_STATE);
         mDB.execSQL(DB_CREATE_STATE);
+        mDB.execSQL(DB_DESTROY_LIST);
+        mDB.execSQL(DB_CREATE_LIST);
     }
 
     public Boolean check() {
@@ -79,8 +84,16 @@ public class Database {
             return true;
     }
 
-    // 0--- 1--- 2---- 3-- 4 ----5----- 6------ 7----- 8---- 9----10----11-----
-    // _id year month day hour minute weather feeling tag diary temp picture
+
+    public void init() {
+        mDB = mHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        values.put(ADDRESS, "78:A5:04:13:3C:FA");
+
+        mDB.insert(Beacon_List, null, values);
+    }
 
     // 기존 멤버인지 검색
 
@@ -164,6 +177,62 @@ public class Database {
         return Arl;
     }
 
+    // 사용하는 비콘 리스트 저장
+    public void beaconList(){
+
+        Cursor cursor;
+        cursor = mDB.query(Beacon_List, beacons, null, null, null, null, null);
+
+        mDB = mHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+        int int_count = cursor.getCount();
+        cursor.moveToFirst();
+/*        if(cursor.getCount() == 0){
+            values.put(ADDRESS, "Beacon_list");
+            mDB.insert(Beacon_List, null, values);
+            return;
+        }*/
+
+        String beacon[] = {"78:A5:04:13:3C:FA"};
+        ArrayList<String> beacons = new ArrayList<String>();
+        for(int i = 0 ; i < beacon.length; i++){
+            beacons.add(beacon[i]);
+            Log.i("ttt", "beacons.get(" + i + ") = " + beacons.get(i).toString());
+            Log.i("ttt", "beacons.size() " + beacons.size());
+        }
+
+        if(beacons.size() != int_count){
+            int k = beacons.size() - int_count;
+            for(int i = 0 ; i < k; i++) {
+                values.put(ADDRESS, beacons.get(beacons.size() - i - 1));
+            }
+            mDB.insert(Beacon_List, null, values);
+        }
+    }
+
+    // 비콘 리스트 불러오기
+    public ArrayList<String> getBeacons() {
+        Cursor cursor;
+        cursor = mDB.query(Beacon_List, beacons, null, null, null, null, null);
+
+        int int_count = cursor.getCount();
+        Log.i("ttt", "getBeacons. size  : : " + int_count);
+        cursor.moveToFirst();
+
+        ArrayList<String> Arl = new ArrayList<String>();
+
+        for (int i = 0; i < int_count; i++) {
+            Arl.add(cursor.getString(1).toString());
+            cursor.moveToNext();
+        }
+
+        return Arl;
+
+    }
+
+
     public void addHistory(History history) {
         mDB = mHelper.getWritableDatabase();
 
@@ -196,6 +265,7 @@ public class Database {
             return Arl;
 
     }
+
 
     public void delete(String id) {
         mDB.execSQL("delete from smart_brochure where _id ='" + id + "';");

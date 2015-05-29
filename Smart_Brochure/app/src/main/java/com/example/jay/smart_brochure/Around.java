@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +21,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class Around extends Activity {
@@ -36,6 +57,12 @@ public class Around extends Activity {
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
     private static final long SCAN_PERIOD = 10000;
+
+    private final String LC0001 = "LC0001";
+    private static String url = "http://jung2.maden.kr/beacon_gateway";
+
+    Database db = new Database(this);
+    ArrayList<String> b_list = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +98,11 @@ public class Around extends Activity {
 
     private void init() {
         // TODO Auto-generated method stub
+        db.open();
+        db.beaconList();
+        b_list = db.getBeacons();
+        Log.i("ttt", "b_list.size() : : : " + b_list.size());
+        db.close();
         devices = new ArrayList<String[]>();
 
 		/*
@@ -85,6 +117,11 @@ public class Around extends Activity {
         list.setAdapter(myAdap);
 
         mHandler = new Handler();
+
+
+        for(int i = 0 ; i < b_list.size() ; i++)
+            Log.i("ttt", "b_list : " + b_list.get(i).toString());
+
     }
 
     @Override
@@ -112,6 +149,10 @@ public class Around extends Activity {
             case R.id.bScan:
                 if (!mBluetoothAdapter.isEnabled()) {
                     turnOnBT();
+                }
+                if(!mBluetoothAdapter.isEnabled()){
+                    Toast.makeText(this, "블루투스를 켜야합니다.", Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 txt.setText("검색중...");
                 scanLeDevice(true);
@@ -172,18 +213,31 @@ public class Around extends Activity {
                 public void run() {
                     // 스캔해서 device에서 주소랑 이름 불러와서 리스트에 뿌려줌
                     String[] s = { device.getAddress(), device.getName() };
-                    Boolean check = true;
-                    for(int i = 0 ; i < devices.size() ; i++){
-                        if(devices.get(i)[0].toString().equals(s[0])){
-                            check = false;
-                            break;
+                    Boolean check = false;
+                    for(int i = 0 ; i < b_list.size() ; i++ ){
+                        if(b_list.get(i).toString().equals(s[0])){
+                            for(int j = 0 ; j < devices.size() ; j++){
+                                if(devices.get(j)[0].toString().equals(s[0])){
+                                    check = true;
+                                    break;
+                                }
+                                else {
+                                    check = false;
+                                }
+                            }
                         }
-                        else
-                            check = true;
                     }
-                    if(check == true)
+
+                    if(check == false)
                     devices.add(s);
                     Log.i("ttt", "device.getAddress(): " + device.getAddress());
+/*                    try {
+                        sendId();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }*/
                     myAdap.notifyDataSetChanged();
                 }
             });
@@ -216,6 +270,67 @@ public class Around extends Activity {
             Log.i("ttt", " scanLeDevice, else");
             mScanning = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
+        }
+    }
+
+    private void sendId() throws IOException, JSONException {
+        String id = devices.get(0).toString();
+
+
+        JSONObject beaconObject = new JSONObject();
+        JSONObject dataObject = new JSONObject();
+        JSONArray jsonArray = new JSONArray();
+        JSONArray jArrayBeacon = new JSONArray();
+        beaconObject.put("beacon_id", devices);
+        jsonArray.put(beaconObject);
+        dataObject.put("_req_data", jsonArray);
+        dataObject.put("_req_svc", LC0001);
+
+        String dataString = dataObject.toString();
+
+        DefaultHttpClient client = new DefaultHttpClient();
+        try {
+            //android 3.0 부터는 네트워크작업을 UI쓰레드가 아닌 별도의 쓰레드로 돌려야해서
+            if (android.os.Build.VERSION.SDK_INT > 9) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+
+                //Param 설정
+                ArrayList<NameValuePair> paramList = new ArrayList<NameValuePair>();
+                paramList.add(new BasicNameValuePair("JSONData", dataString));
+                //Toast.makeText(getActivity().getApplicationContext(), paramList.toString(), Toast.LENGTH_SHORT).show();
+                //연결지연시
+                HttpParams params = new BasicHttpParams();
+                HttpConnectionParams.setConnectionTimeout(params, 3000);
+                HttpConnectionParams.setSoTimeout(params, 3000);
+                //Json 데이터를 서버로 전송
+                HttpPost httpPost = new HttpPost(url);
+                httpPost.setEntity(new UrlEncodedFormEntity(paramList, "UTF-8"));
+
+                // httpPost.setHeader("Accept", "application/json");
+                // httpPost.setHeader("Content-type", "application/json");
+                //데이터보낸 뒤 서버에서 데이터를 받아오는 과정
+                ResponseHandler<String> reshand = new BasicResponseHandler();
+
+                HttpResponse response = client.execute(httpPost);
+                BufferedReader bufferReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "utf-8"));
+                String line = null;
+                String result = "";
+
+                while ((line = bufferReader.readLine()) != null) {
+                    result += line;
+
+                }
+            } else {
+
+            }
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+            client.getConnectionManager().shutdown(); // 연결 지연 종료
         }
     }
 }
