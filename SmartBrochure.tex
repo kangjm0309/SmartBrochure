@@ -16,7 +16,6 @@
 %% and
 %% http://www.ieee.org/
 
-
 %%*************************************************************************
 %% Legal Notice:
 %% This code is offered as-is without any warranty either expressed or
@@ -164,6 +163,8 @@
 %
 % You can find documentation about the pdfTeX application at:
 % http://www.tug.org/applications/pdftex
+
+
 
 
 
@@ -343,6 +344,10 @@
 % to submit to, of course. )
 
 
+
+\usepackage[pdftex]{graphicx}
+
+
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
 
@@ -350,6 +355,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
+\normalsize
 \title{Smart Brochure \\ (paperless brochure using beacon)}
 
 
@@ -365,7 +371,7 @@ Email: tatto\_hs@naver.com }
 Email: kjm8475@naver.com}
 \and
 \IEEEauthorblockN{Kiseong Kim\\Information System in HYU\\
-Email: rltjd1231@naver.com }}
+Email: rltjd1231@naver.com \\\\\\\\\\\\\\}}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -409,9 +415,22 @@ The purpose of this software project is to help them. We can provide many kinds 
 
 Keywords 
 ---
-beacon; bluetooth; iot; museum; brochure; smart phone; application; 
+beacon; bluetooth; iot; museum; brochure; smart phone; application; \\\\\\\\\\
 
 \end{abstract}
+
+
+\renewcommand{\arrayrulewidth}{1pt}
+
+\begin{tabular}{|l|l|l|}\hline
+ Roles& Name & Task description and etc. \\\hline\hline
+User & Kiseong Kim & Use the mobile application and get some data about exhibition \\
+Customer & Kiseong Kim & Purchase this software service and offer the data about exhibition \\
+Software Developer & Jaemook Kang & Develop the mobile application and back-end server\\
+Developme nt manager & Hyeonsu Lim &  Manage team and project and make the every plan of the process of project\\\hline
+
+\end{tabular}
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -436,7 +455,7 @@ beacon; bluetooth; iot; museum; brochure; smart phone; application;
 \IEEEpeerreviewmaketitle
 
 
-
+\large
 \section{Introduction}
 % no \IEEEPARstart
 If you have only a little interest, you will find many art galleries and museums easily. There are over 100 exhibition halls in Seoul, which means that a lot of exhibitions we can enjoy are opening every day. In order to help the audiences enjoy these exhibitions better and feel better, those exhibitions are providing many items that will help people understand the exhibition better. The audiences need to pay extra costs to buy or rent those goods.
@@ -447,11 +466,86 @@ On the other hand, let’s think about obscure artists and the university studen
  The second reason is the difference of people’s interests. Practically, it is really hard for the small exhibition halls to have people’s attention. Even though they spend money more and produce the goods for their exhibitions, there will not be that many people who will pay extra money to buy or rent the goods.
 
  We thought that people who are trying to open small exhibition and students who are preparing an exhibition doesn’t want the extra income but the interests of people. We wanted to provide them more chances for the amateur artists to introduce themselves and to appeal their works to people. Therefore, we want to fulfill their requirements through “SMART BROCHURE.” Artists can provide good service to their audiences with less cost, and audiences don’t have to pay extra money and get the chance to use many services that artists want to provide, only by installing an application. 
-Though there is a similar application, named “Jeonsi bogo,” this service is only for the big exhibitions, so we still need to develop new system.
-
+Though there is a similar application, named “Jeonsi bogo,” this service is only for the big exhibitions, so we still need to develop new system.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
+\section{Index}
+
+I. Introduction\\
+
+
+II. Requirement
+
+\quad2.1 The Environment for Using Beacon
+
+\quad2.1-1 Bluetooth 2.1-2 OS
+
+\quad2.2 Server requirement
+
+\quad2.2-1 How to send information 2.2-2 Need for back-end server
+
+\quad2.3 User requirement 2.3-1 Accuracy
+
+\quad2.3-2 Unimportant data 2.3-3 Push alarm
+
+\quad2.3-4 Exhibition list
+
+\quad2.3-5 Map
+
+\quad2.3-6 Location of work the exhibition 2.3-7 Work button
+
+\quad2.3-8 Work picture
+
+\quad2.3-9 Text box1
+
+\quad2.3-10 Text box2
+
+\quad2.3-11 Voice button
+
+\quad2.3-12 Previous exhibition
+
+\quad2.3-13 Delete function
+
+\quad2.3-14 Reporting problem
+
+\quad2.4 Customer requirement\\
+
+III. Develop environment
+
+\quad3.1 Choice of software development platform
+
+\quad3.1-1 Which platform and why?
+
+\quad3.1-2 Which programming language and why? 3.2 A cost estimation
+
+\quad3.3 Information of development environment
+
+\quad3.4 Using commercial cloud platform\\
+
+IV. Specification
+
+\quad4.1 Modeling for Specifications 
+
+\quad4.2 Prototype for Specifications
+
+\quad4.3 Specifications for front-end application pages
+
+\quad\quad-My history page
+
+\quad\quad-Information page
+
+\quad\quad-Searching beacon page
+
+\quad\quad-More page
+
+\quad4.4 Specifications for Server\\
+
+V. Architecture Design and Implementation\\
+
+VI. Use Cases
+\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \section{Requirements}
 
 \subsection{Requirement for The Environment for Using Beacon}
@@ -459,24 +553,24 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 1. Bluetooth module
 
 - Users need to have Bluetooth 4.0 or higher module.
-\\
+
 2. Smartphone OS
 
 1) ios 7 or higher
 
 2) Android 4.3 or Higher
 
-3) OSX mavericks 10.9
+3) OSX mavericks 10.9\\\\
 
 \subsection{Requirement for Server}
-1. How to send information
+1. How to send information\\
 
-1) The beacon installed in the gallery will send the id code to the smartphone which has the application, and the smartphone will send that id code and the customer information to the server. 
+1) The beacon installed in the gallery will send the id code to the smartphone which has the application, and the smartphone will send that id code and the customer information to the server. \\
 
-2) Lastly, the server will send the appropriate data, which is decided by combining the gallery’s information and the customer information, to the smartphone.
+2) Lastly, the server will send the appropriate data, which is decided by combining the gallery’s information and the customer information, to the smartphone.\\
 
 2.  Needs\\
-- We need to develop a back-end server that stores the information and judge the id code sent by beacon.
+ We need to develop a back-end server that stores the information and judge the id code sent by beacon.\\\\
 
 \subsection{Requirement for User}
 1. Accuracy : Users want more precise sensor when they use beacon technology\\
@@ -535,7 +629,7 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 
 14. Reporting problem
 
-\quad - When use Smart Brochure, users can find some problem. In this situation, users can report this problem to developer.\\
+\quad - When use Smart Brochure, users can find some problem. In this situation, users can report this problem to developer.
 
 
 \section{Development Environment}
@@ -549,11 +643,23 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 
 2. Which programming language and why?
 
-1) java for android application developing 
+1) java for android application developing \\
 
-2) objective-C and Swift for iOS application developing.
+Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by James Goslingat Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.\\
 
-3) ruby on rails for building AWS server
+
+2) objective-C and Swift for iOS application developing.\\
+ Objective-C is a general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C-programming language. It is the main programming language used by Apple for the OS X and iOS operating systems, and their respective application programming interfaces (APIs), Cocoa and Cocoa Touch.
+Objective-C's features often allow for flexible, and often easy, solutions to programming issues. Delegating methods to other objects and remote invocation can be easily implemented using categories and message forwarding. Swizzling of the isa pointer allows for classes to change at runtime. Typically used for debugging where freed objects are swizzled into zombie objects whose only purpose is to report an error when someone calls them. Swizzling was also used in Enterprise Objects Framework to create database faults. Swizzling is used today by Apple?s Foundation Framework to implement Key-Value Observing.\\
+
+Swift is a multi paradigm, compiled 
+programming language created by Apple Inc. for iOS and OS X development Swift is designed to work with Apple's Cocoa and 
+Cocoa Touch frameworks and the large body of existing Objective-C code written for Apple products. Swift is intended to be more resilient to erroneous code ("safer") than Objective-C, and also more concise. It is built with the LLVM compiler framework included in Xcode6, and uses the Objective-C runtime, allowing C, Objective-C, C++ and Swift code to run within a single program, but its proprietary nature may hinder Swift's adoption outside the Apple ecosystem. \\
+
+
+
+3) JSON\\
+JSON is an open standard format that uses human-readable text to transmit data objects consisting of attribute?value pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML. Although originally derived from the JavaScript scripting language, JSON is a language-independent data format.\\\\
 
 \subsection{Provide a cost estimation for your built. \\
 (including any purchase of software/hardware)}
@@ -562,7 +668,7 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 
 2. cost for beacon : We will use the “RECO” beacon. Reco beacon is authorised by iBeacon. It’s prices are ₩ 229,000 (10 pieces). 
 
-3 cost for developer : 
+3 cost for developer : \\\\
 
 \subsection{Provide clear information of your development environment.\\ (e.g., version of software, OS version, your computer resources) }
 1. iOS develop 
@@ -575,12 +681,49 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 
   1) Windows : Windows7 ultimate
 
-  2) Android OS : Android 4.4 kitkat
+  2) Android OS : Android 4.4 kitkat\\\\
 
-\subsection{Using any commercial cloud platform (e.g., Amazon’s EC2) is definitely a BONUS.  }
+\subsection{Using any commercial cloud platform (e.g., Amazon’s EC2) is definitely a BONUS.\\  }
+1.   We will use Apache  Web Server because  it is the world's most widely used web server software. As of June 2013, Apache was estimated to serve 54.2percent of all active website and 53.3percent of the top servers across all domains. (The most important reason is we have already apache web server.)\\
+
+Apache Web Server has some features: 
+	
+\quad- easy and fast customizing using module. 
+
+\quad- It can handle many traffic easily.
+
+\quad- It can control web server more delicately
+
+\quad- It is tested enough, so it is very stable.\\
+
+
 2. Software in use 
 
-Any existing software or algorithm in use? (doing a similar task as your proposal; provide a proper reference if there is any) 
+Any existing software or algorithm in use? (doing a similar task as your proposal; provide a proper reference if there is any)\\
+
+1. Trello : \\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.5]{img_kanban}
+    \caption{Kanban Paradigm} 
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_trello}
+    \caption{trello} 
+\end{center}
+\end{figure}
+
+Trello is a free web-based project management application. Trello uses the kanban paradigm for managing project. 
+Kanban is a scheduling system for lean and just-in-time (JIT) production. \\
+
+Projects are represented by boards, which contain lists (corresponding to task lists). Lists contain cards (corresponding to tasks). Cards are supposed to progress from one list to the next (via drag-and-drop), for instance mirroring the flow of a feature from idea to implementation. Users can be assigned to cards. Users and boards can be grouped into organizations.\\
+ 
+
+
 
 
 There is a little similar software in Korea, “전시보GO” But this software service is only for big exhibition so small exhibition artist or students can’t use that services. 
@@ -588,7 +731,121 @@ There is a little similar software in Korea, “전시보GO” But this software
 
 3. Task distribution (If you want, you can provide this later at the next phase - design) 
 
-Which member is responsible for what? 
+Which member is responsible for what? \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+
+
+\section{Specifications}
+\subsection{Modeling for Specifications \\}
+
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.4]{img_01.jpg}
+    \caption{basic structure} 
+\end{center}
+\end{figure}
+
+
+\quad Beacon sends a specific ID value to the smart phone, when smart phone comes into it?s signal area. Then smart phone application recognizes this ID value and sends this value to server. Server which has this ID value check the location of beacon. After that, server sends the information or data about exhibition to smart phone.\\\\
+
+\subsection{Prototype for Specifications}
+\quad Our application is divided into two parts. One is server side with Amazon Web Service EC2 and
+Ruby on Rails. The other part is client side acting at the smart phone. Client side, smart phone application, is structured by objective-C (iOS application), and java(Android application)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\subsection{Specification for front-end application pages}
+\quad 1) My history page\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_MyHistory}
+    \caption{My History Page01} 
+\end{center}
+\end{figure}
+
+
+This is the first page of application. And you can access this page by tab menu under the display. There is the list of exhibitions which you saw. You can choose and enter the detail page of  the exhibition which you want. Exhibition list is generated like a stack. So the latest exhibition file is generated on the top of list. \\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_exhiDetail01}
+    \caption{My History Page02} 
+\end{center}
+\end{figure}
+
+This is the detail page of the exhibition01. On Navigation bar, there is the name of the exhibition. Under the navigation bar, the left side of the first cell,  there is main image of exhibition. And Next to the main image, the right side of the first cell, there is the brief explanation for this exhibition. There will be the information of this exhibition such like the theme of exhibition, the name of exhibition center, address of exhibition center. Below First cell, there is the list of artwork which is displayed in this exhibition. This artwork data is downloaded by beacon communication(and it will be explained at ?beacon page?). You can see the detail information about the artwork such as image of artwork, text explanation of artist, or voice-audio explanation. \\\\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_exhiDetail02}
+    \caption{My History Page03} 
+\end{center}
+\end{figure}
+
+This is the detail page of artwork. On the Navigation bar, there is the name of artwork. Under the Navigation bar, there is the Image of the artwork(If you touch the small image, the pop up window will appear, and you can see the big size image). Below the artwork image, there is the play and stop button. This button is for voice-audio explanation. Voice-audio explanation is not for every artwork. We offer the voice-audio explanation only for the artwork that artist want, and artwork that artist offer the voice-audio explanation data. So if there is the voice-audio explanation, there will be play and stop buttons. And if there is no voice-audio explanation, the play and stop buttons will not exist. Under the Image and buttons, there is the text explanations that artist offer. \\\\\\
+\quad 2) Information page\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_information}
+    \caption{Information Page01} 
+\end{center}
+\end{figure}
+
+You can access the Information page by touching tab menu button under the screen. This page is for noticing the exhibition. There is the list of the exhibitions which is on going now or which will be started. You can check the detail information about the exhibition that you like by touching the name of the exhibition. \\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_infoDetail}
+    \caption{Information Page02} 
+\end{center}
+\end{figure}
+
+
+This page shows the detail information of the exhibition. You can move to the exhibition list page by back button on the navigation bar. On navigation bar, there is the name of the exhibition. Below the navigation bar, you can find the brief information about the exhibition such as the main image of the exhibition, theme of the exhibition, and map or address of exhibition. \\\\\\
+
+\quad 3) Searching beacon page\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_findingSignal}
+    \caption{Beacon Page01} 
+\end{center}
+\end{figure}
+
+If you access the beacon searching page with the state turning off the Bluetooth and wifi, you will see the pop-up message that induce that turning on the wifi and Bluetooth. To download the information of the exhibition, you have to get a beacon id, and send that id to server. So you should access the beacon and communicate with beacon first. Because beacon uses the Bluetooth, you should turn on your Bluetooth. And if you download the information of exhibition using 3g or LTE, not using wifi, you can get a big data loss. 
+So application send the inducing message that it is better that you use the wifi.\\\\\\\\\\\\\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_turnon}
+    \caption{Beacon Page02} 
+\end{center}
+\end{figure}
+
+If you turn on the Bluetooth, the application searches the beacon signal automatically. \\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.15]{img_popup}
+    \caption{Beacon Page03} 
+\end{center}
+\end{figure}
+
+After get beacon id, application send that id to server. Then the pop-up window appear like a photo. If you touch the ?yes? button, application download the information of exhibition which you watch now. And downloaded information is placed on ?My history? page like a stack.\\\\\\
+
+\quad 4) More page
+
+In More page, there will be the additional function. For example, there will be the on/off button that control the ?push? notification. If the user makes the button-state ?on?, user can get push notification so he can find and access to beacon. (It means if user makes the button-state ?off?, he cannot get any push information about beacon and exhibition.) \\\\\\
+\subsection{Specifications for Server}
+
+
+\section{Architecture Design and Implementation}
+
+\section{Use Cases}
+
+
 
 
 
@@ -676,22 +933,12 @@ Which member is responsible for what?
 
 
 
-\section{Conclusion}
-The conclusion goes here.
-
-
 
 
 % conference papers do not normally have an appendix
 
 
-% use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
-
-
+% use section* for acknowledgem
 
 
 
@@ -717,13 +964,6 @@ The authors would like to thank...
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
 
 
 
