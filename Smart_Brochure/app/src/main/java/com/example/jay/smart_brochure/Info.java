@@ -30,9 +30,6 @@ public class Info extends Activity {
         setContentView(R.layout.activity_info);
 
         my_Array = new ArrayList<String>();
-        my_Array.add("ex 1");
-        my_Array.add("ex 2");
-        my_Array.add("ex 3");
         customAdapter myAdap = new customAdapter(this, my_Array);
         ListView my_list = (ListView) findViewById(R.id.info_list);
 

@@ -128,9 +128,7 @@ public class Database {
 
     public ArrayList<String> getContent() {
 
-        Log.i("aaa", "before");
         Cursor cursor = mDB.query(S_Brochure, list, null, null, null, null, ID);
-        Log.i("aaa", "after");
         int int_count = cursor.getCount();
         cursor.moveToFirst();
 
@@ -140,7 +138,6 @@ public class Database {
             Arl.add(cursor.getString(1).toString());
             cursor.moveToNext();
         }
-        Log.i("aaa", "afterrrrr");
 
         return Arl;
     }
@@ -154,23 +151,6 @@ public class Database {
 
         for (int i = 0; i < int_count; i++) {
             Arl.add(cursor.getString(2).toString());
-            cursor.moveToNext();
-        }
-
-        return Arl;
-    }
-
-    // test
-    public ArrayList<String[]> getTestHistory() {
-        Cursor cursor = mDB.query(S_Brochure, history, null, null, null, null, ID);
-        int int_count = cursor.getCount();
-        cursor.moveToFirst();
-
-        ArrayList<String[]> Arl = new ArrayList<String[]>();
-
-        for (int i = 0; i < int_count; i++) {
-            String[] a = {cursor.getString(0).toString(), cursor.getString(1).toString(), cursor.getString(2).toString()};
-            Arl.add(a);
             cursor.moveToNext();
         }
 
@@ -218,7 +198,7 @@ public class Database {
         cursor = mDB.query(Beacon_List, beacons, null, null, null, null, null);
 
         int int_count = cursor.getCount();
-        Log.i("ttt", "getBeacons. size  : : " + int_count);
+        Log.i("getBeacons", "getBeacons. size  : : " + int_count);
         cursor.moveToFirst();
 
         ArrayList<String> Arl = new ArrayList<String>();
@@ -227,6 +207,7 @@ public class Database {
             Arl.add(cursor.getString(1).toString());
             cursor.moveToNext();
         }
+        Log.i("getBeacons", "getBeacons. 리스트 : : " + Arl.get(0).toString());
 
         return Arl;
 

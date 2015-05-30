@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:name="android.hardware.bluetooth_le"
@@ -49,7 +50,7 @@
             android:label="@string/title_activity_my" >
         </activity>
         <activity
-            android:name=".MyClicked"
+            android:name=".Push_Clicked"
             android:label="@string/title_activity_my_clicked" >
         </activity>
         <activity

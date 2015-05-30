@@ -8,11 +8,17 @@
     tools:context="com.example.jay.smart_brochure.Explanation">
 
     <ImageView
+        android:id="@+id/exp_image"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@drawable/ic_launcher"/>
+        android:layout_height="100dp"/>
 
     <TextView
+        android:id="@+id/exp_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/exp_spec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -1,46 +1,21 @@
 package com.example.jay.smart_brochure;
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.TabActivity;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.StrictMode;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Window;
 import android.widget.TabHost;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * 메인엑티비티. 탭 뷰 구성.
@@ -50,29 +25,44 @@ import java.util.HashMap;
 public class MainActivity extends TabActivity {
     private BluetoothAdapter mBluetoothAdapter;
 
-    private Handler mHandler;
-    private Boolean mScanning;
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
-    private static final long SCAN_PERIOD = 10000;
-
-    private final String LC0000 = "LC0000";
-    private static String url = "http://jung2.maden.kr/beacon_gateway/";
 
     public ArrayList<String> devices = new ArrayList<String>();
 
     Database data = new Database(this);
+
+    //BLE Search
+/*    ArrayList<String> beacons = new ArrayList<String>();   // 사용중인 비콘 목록
+    private static final long SCAN_PERIOD = 10000;
+    private Handler mHandler;
+    private Boolean mScanning;
+
+    private final String LC0000 = "LC0000";
+    private static String url = "http://jung2.maden.kr/beacon_gateway/";*/
+
     private BackPressed backbtn;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
             super.onCreate(savedInstanceState);
+        Boolean checkService = getServiceTaskName();
+        if(checkService == false){
+            Intent i = new Intent(this, SearchBLE.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+            this.startService(i);
+        }
         backbtn = new BackPressed(this);
-        mHandler = new Handler();
 
+        // BLE Search
+/*        mHandler = new Handler();
 
+        data.open();
+        beacons = data.getBeacons();
+        data.close();
         IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-        registerReceiver(mReceiver, filter);
+        registerReceiver(mReceiver, filter);*/
 
         startActivity(new Intent(this, Splash.class)); // Splash
         setContentView(R.layout.activity_main);
@@ -144,7 +134,7 @@ public class MainActivity extends TabActivity {
         }
     }
 
-    // Device scan callback.
+/*    // Device scan callback.
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
         @Override
         public void onLeScan(final BluetoothDevice device, int rssi,
@@ -153,11 +143,31 @@ public class MainActivity extends TabActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    // 스캔해서 device에서 주소랑 이름 불러와서 리스트에 뿌려줌
                     String[] s = { device.getAddress(), device.getName() };
-                    Toast.makeText(getApplicationContext(), device.getAddress(), Toast.LENGTH_SHORT).show();
-                    Log.i("ttt", "자동검색  :  " + device.getAddress());
-                    devices.add(device.getAddress());
+                    Boolean check = true;
+                    Boolean b = true;
+                    Log.d("runrunrun", "run 드루와");
+
+                    for(int i = 0; i < beacons.size(); i++){
+                        if(beacons.get(i).toString().equals(device.getAddress())){
+                            if(devices.size() == 0) {
+                                devices.add(device.getAddress());
+                                check = false;
+                            }
+                            else{
+                                for(int j = 0; j < devices.size(); j++){
+                                    if(devices.get(j).toString().equals(device.getAddress()))
+                                        break;
+                                    else
+                                        check = false;
+                                }
+                            }
+                        }
+                    }
+
+                    if(check == false) {
+                        Toast.makeText(getApplicationContext(), device.getAddress(), Toast.LENGTH_SHORT).show();
+                        Log.i("ttt", "자동검색  :  " + device.getAddress());
 
                     try {
                         sendId();
@@ -166,6 +176,8 @@ public class MainActivity extends TabActivity {
                     } catch (JSONException e1) {
                         e1.printStackTrace();
                     }
+                    }
+
                 }
             });
         }
@@ -219,7 +231,7 @@ public class MainActivity extends TabActivity {
             }
 
         }
-    };
+    };*/
 
     @Override
     public void onBackPressed() {
@@ -232,7 +244,8 @@ public class MainActivity extends TabActivity {
         super.onDestroy();
     }
 
-    private void sendId() throws IOException, JSONException {
+    // Search_BLE 서비스에서 실행하므로, 삭제
+/*    private void sendId() throws IOException, JSONException {
         if(devices.size()!=0) {
             String id = devices.get(0).toString();
         }
@@ -278,10 +291,11 @@ public class MainActivity extends TabActivity {
                 JSONObject joResData = new JSONObject(strResltJsonData);
                 JSONObject jaResData = (JSONObject) ((JSONArray) joResData.get("res_data")).get(0);
                 JSONObject jaRRE = (JSONObject)((JSONArray)jaResData.get("_exBea")).get(0);
-                Log.d("response", "Name::"+jaRRE.get("_ehnm"));
+                Log.d("response", "Name::"+jaRRE.get("_cd"));
 
 
-                Intent intent = new Intent(this, Around.class);
+                Intent intent = new Intent(this, Push_Clicked.class);
+                intent.putExtra("exh_cd", (String)jaRRE.get("_cd"));
                 PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                 NotificationCompat.Builder b = new NotificationCompat.Builder(this);
@@ -301,7 +315,7 @@ public class MainActivity extends TabActivity {
                 NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(1, b.build());
 
-                /*
+                *//*
 
 
                 // httpPost.setHeader("Accept", "application/json");
@@ -317,7 +331,7 @@ public class MainActivity extends TabActivity {
                 while ((line = bufferReader.readLine()) != null) {
                     result += line;
 
-                }*/
+                }*//*
             } else {
 
             }
@@ -330,6 +344,24 @@ public class MainActivity extends TabActivity {
             e.printStackTrace();
             client.getConnectionManager().shutdown(); // 연결 지연 종료
         }
+    }*/
+
+    // SearchBLE 서비스 on/off 여부 검사
+    public boolean getServiceTaskName() {
+        Log.d("getServiceTaskName()", "hihi");
+        boolean checked = false;
+
+        ActivityManager am = (ActivityManager) this.getSystemService(Activity.ACTIVITY_SERVICE);
+        Log.d("getServiceTaskName()", "activity_service");
+
+        for(ActivityManager.RunningServiceInfo service : am.getRunningServices(Integer.MAX_VALUE)){
+            if(!service.service.getClassName().equals("SearchBLE"))
+                checked = false;
+            else
+                checked = true;
+        }
+
+        return checked;
     }
 }
 

@@ -94,7 +94,7 @@ public class My extends Activity {
         public void onItemClick(AdapterView<?> parent, View view, int position,
                                 long id) {
 
-            Intent i = new Intent(My.this, MyClicked.class);
+            Intent i = new Intent(My.this, Push_Clicked.class);
             startActivity(i);
             overridePendingTransition(0, 0);
         }
