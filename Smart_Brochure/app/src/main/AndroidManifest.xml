@@ -50,6 +50,10 @@
             android:label="@string/title_activity_my" >
         </activity>
         <activity
+            android:name=".My_Clicked"
+            android:label="@string/title_activity_my_clicked" >
+        </activity>
+        <activity
             android:name=".Push_Clicked"
             android:label="@string/title_activity_my_clicked" >
         </activity>

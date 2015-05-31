@@ -2,15 +2,21 @@ package com.example.jay.smart_brochure;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Setting extends Activity {
 
     public Database data;
+    private Button btn_onoff;
+    private Boolean checkOnOff;
+    private TextView auto_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +24,25 @@ public class Setting extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        btn_onoff = (Button) findViewById(R.id.btn_onoff);
+        auto_search = (TextView) findViewById(R.id.auto_search);
         data = new Database(this);
 
-/*        // db에서 onoff 설정 상태 불러와서 설정
+        // db에서 onoff 설정 상태 불러와서 설정
         data.open();
-        int check = data.getOnoff();
-        if (check == 1){
-            onOff.setText("On");
-            checkOnOff = true;
-        }
-        else {
-            onOff.setText("Off");
+        String check = data.getOnoff();
+        Log.d("Setting", "check : : "+ check);
+        if (check.equals("0")){
+            btn_onoff.setText("끄기");
+            auto_search.setText("자동 검색 : 켜져있음");
             checkOnOff = false;
         }
-        data.close();*/
+        else {
+            btn_onoff.setText("켜기");
+            auto_search.setText("자동 검색 : 꺼져있음");
+            checkOnOff = true;
+        }
+        data.close();
     }
 
 
@@ -60,22 +71,26 @@ public class Setting extends Activity {
     public void mOnClick(View v) {
 
         switch (v.getId()) {
-/*            case R.id.onOff:
+            case R.id.btn_onoff:
                 if (checkOnOff == false){
                     checkOnOff = true;
-                    onOff.setText("On");
+                    btn_onoff.setText("켜기");
+                    auto_search.setText("자동 검색 : 꺼져있음");
                     data.open();
                     data.editOnoff("1");
+                    Log.d("세팅", "checkonoff == false 일떄" + data.getOnoff());
                     data.close();
                 }
                 else{
                     checkOnOff = false;
-                    onOff.setText("Off");
+                    btn_onoff.setText("끄기");
+                    auto_search.setText("자동 검색 : 켜져있음");
                     data.open();
                     data.editOnoff("0");
+                    Log.d("세팅", "checkonoff == true 일떄" + data.getOnoff());
                     data.close();
                 }
-                break;*/
+                break;
         }
     }
 }

@@ -14,7 +14,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -55,11 +54,11 @@ public class Explanation extends Activity {
 
     private void setExplanation() {
         try {
-            JSONArray jsonArray = (JSONArray) jaResData.get("res_data");
-                JSONObject worksList = (JSONObject) jsonArray.get(0);
-                String a = worksList.get("_full_img").toString();
-                String b = (String)worksList.get("_pc_nm");
-                String c = (String)worksList.get("_pc_cont");
+
+                String a = jaResData.get("_full_img").toString();
+                String b = jaResData.get("_pc_nm").toString();
+                String c = jaResData.get("_pc_cont").toString();
+
 
             works.add(a);
             works.add(b);

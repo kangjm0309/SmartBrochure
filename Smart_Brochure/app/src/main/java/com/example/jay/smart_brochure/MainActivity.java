@@ -32,21 +32,14 @@ public class MainActivity extends TabActivity {
 
     Database data = new Database(this);
 
-    //BLE Search
-/*    ArrayList<String> beacons = new ArrayList<String>();   // 사용중인 비콘 목록
-    private static final long SCAN_PERIOD = 10000;
-    private Handler mHandler;
-    private Boolean mScanning;
-
-    private final String LC0000 = "LC0000";
-    private static String url = "http://jung2.maden.kr/beacon_gateway/";*/
-
     private BackPressed backbtn;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
             super.onCreate(savedInstanceState);
+
         Boolean checkService = getServiceTaskName();
         if(checkService == false){
             Intent i = new Intent(this, SearchBLE.class);
@@ -56,13 +49,6 @@ public class MainActivity extends TabActivity {
         backbtn = new BackPressed(this);
 
         // BLE Search
-/*        mHandler = new Handler();
-
-        data.open();
-        beacons = data.getBeacons();
-        data.close();
-        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-        registerReceiver(mReceiver, filter);*/
 
         startActivity(new Intent(this, Splash.class)); // Splash
         setContentView(R.layout.activity_main);
@@ -134,6 +120,34 @@ public class MainActivity extends TabActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        backbtn.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Toast.makeText(this, "onDestroy()", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+
+    public boolean getServiceTaskName() {
+        Log.d("getServiceTaskName()", "hihi");
+        boolean checked = false;
+
+        ActivityManager am = (ActivityManager) this.getSystemService(Activity.ACTIVITY_SERVICE);
+        Log.d("getServiceTaskName()", "activity_service");
+
+        for(ActivityManager.RunningServiceInfo service : am.getRunningServices(Integer.MAX_VALUE)){
+            if(!service.service.getClassName().equals("SearchBLE"))
+                checked = false;
+            else
+                checked = true;
+        }
+
+        return checked;
+    }
+}
 /*    // Device scan callback.
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
         @Override
@@ -233,16 +247,7 @@ public class MainActivity extends TabActivity {
         }
     };*/
 
-    @Override
-    public void onBackPressed() {
-        backbtn.onBackPressed();
-    }
 
-    @Override
-    protected void onDestroy() {
-        Toast.makeText(this, "onDestroy()", Toast.LENGTH_SHORT).show();
-        super.onDestroy();
-    }
 
     // Search_BLE 서비스에서 실행하므로, 삭제
 /*    private void sendId() throws IOException, JSONException {
@@ -347,21 +352,6 @@ public class MainActivity extends TabActivity {
     }*/
 
     // SearchBLE 서비스 on/off 여부 검사
-    public boolean getServiceTaskName() {
-        Log.d("getServiceTaskName()", "hihi");
-        boolean checked = false;
 
-        ActivityManager am = (ActivityManager) this.getSystemService(Activity.ACTIVITY_SERVICE);
-        Log.d("getServiceTaskName()", "activity_service");
 
-        for(ActivityManager.RunningServiceInfo service : am.getRunningServices(Integer.MAX_VALUE)){
-            if(!service.service.getClassName().equals("SearchBLE"))
-                checked = false;
-            else
-                checked = true;
-        }
-
-        return checked;
-    }
-}
 

@@ -34,15 +34,22 @@ public class Push_Clicked extends Activity {
 
     String exh_img = "";
     String exh_title = "";
+    String exh_code = "";
     ArrayList<String[]> exh_Array = new ArrayList<String[]>();
+
+    Database data;
+    String address = "";
 
     customAdapter myAdap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_push_clicked);
+        data = new Database(this);
 
         Intent i = getIntent();
+        address = i.getStringExtra("address");
+        exh_code = i.getStringExtra("exh_cd");
         HashMap<String, Object> mapReqData = new HashMap<String, Object>();
         mapReqData.put("_exCd",i.getStringExtra("exh_cd"));
 
@@ -68,6 +75,7 @@ public class Push_Clicked extends Activity {
             exh_img = (String) ((JSONObject) jaResData.get("_ex_inform")).get("_full_img");
             exh_title = (String)((JSONObject)jaResData.get("_ex_inform")).get("_eh_nm");
 
+
             Log.d("jsonData", "imgUrl::"+exh_img);
             Log.d("jsonData", "_eh_nm::"+exh_title);
             Log.d("jsonData", "_thum_img::" + exh_Array.get(0)[0]);
@@ -75,6 +83,13 @@ public class Push_Clicked extends Activity {
         } catch(Exception e) {
             e.printStackTrace();
         }
+
+        History history = new History(address, exh_title, exh_code);
+        data.open();
+        data.addHistory(history);
+        data.close();
+        //DB에 저장
+
 
         myAdap = new customAdapter(this, exh_Array);
         ListView my_list = (ListView) findViewById(R.id.pushclicked_list);
