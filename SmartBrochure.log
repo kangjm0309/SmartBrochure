@@ -1,132 +1,157 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.26)  11 JUN 2015 20:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.26)  11 JUN 2015 22:24
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**SmartBrochure.tex
-(./SmartBrochure.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+**C:/Users/wsb2/Documents/SmartBrochure/SmartBrochure.tex
+(C:/Users/wsb2/Documents/SmartBrochure/SmartBrochure.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.cls"
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
 \@IEEEtrantmpcountA=\count79
 \@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen104
+\@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen105
-\CLASSINFOnormalsizeunitybaselineskip=\dimen106
-\IEEEnormaljot=\dimen107
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
-\IEEEilabelindentA=\dimen108
-\IEEEilabelindentB=\dimen109
-\IEEEilabelindent=\dimen110
-\IEEEelabelindent=\dimen111
-\IEEEdlabelindent=\dimen112
-\IEEElabelindent=\dimen113
-\IEEEiednormlabelsep=\dimen114
-\IEEEiedmathlabelsep=\dimen115
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
 \IEEEiedtopsep=\skip41
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@IEEEsubequation=\count85
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
-\c@figure=\count86
-\c@table=\count87
-\@IEEEeqnnumcols=\count88
-\@IEEEeqncolcnt=\count89
-\@IEEEsubeqnnumrollback=\count90
-\@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count91
-\@IEEEtranrubishbin=\box26
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count92
+\Gread@gobject=\count94
 ))
-\Gin@req@height=\dimen117
-\Gin@req@width=\dimen118
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
-(./SmartBrochure.aux)
-\openout1 = `SmartBrochure.aux'.
-
+(C:\Users\wsb2\Documents\SmartBrochure\SmartBrochure.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 354.
 LaTeX Font Info:    ... okay on input line 354.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 354.
@@ -140,67 +165,21 @@ LaTeX Font Info:    ... okay on input line 354.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 354.
 LaTeX Font Info:    ... okay on input line 354.
 
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+-- Lines per column: 56 (exact).
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
-\scratchdimen=\dimen119
-\scratchbox=\box27
-\nofMPsegments=\count94
-\nofMParguments=\count95
+\scratchcounter=\count95
+\scratchdimen=\dimen127
+\scratchbox=\box28
+\nofMPsegments=\count96
+\nofMParguments=\count97
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count96
-\MPscratchDim=\dimen120
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
+\MPscratchCnt=\count98
+\MPscratchDim=\dimen128
+\MPnumerator=\count99
+\makeMPintoPDFobject=\count100
 \everyMPtoPDFconversion=\toks17
-) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Underfull \hbox (badness 10000) in paragraph at lines 411--415
 
  []
@@ -505,7 +484,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
@@ -1283,8 +1262,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 669--670
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 669--670
-\OT1/cmr/m/n/12 30\OML/cmm/m/it/12 permonth:Somaybetherewillbeadditional$\OT1/p
-tm/m/n/12 360
+$\OT1/cmr/m/n/12 30\OML/cmm/m/it/12 permonth:Somaybetherewillbeadditional$\OT1/
+ptm/m/n/12 360
  []
 
 Missing character: There is no â in font ptmr7t!
@@ -1352,7 +1331,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 706--707
 
  []
 
-<img_kanban.png, id=24, 537.00626pt x 265.99374pt>
+<img_kanban.png, id=23, 537.00626pt x 265.99374pt>
 File: img_kanban.png Graphic file (type png)
  <use img_kanban.png>
 Package pdftex.def Info: img_kanban.png used on input line 710.
@@ -1362,7 +1341,7 @@ Overfull \hbox (16.50247pt too wide) in paragraph at lines 710--711
  [] 
  []
 
-<img_trello.png, id=26, 1298.8525pt x 714.67pt>
+<img_trello.png, id=25, 1298.8525pt x 714.67pt>
 File: img_trello.png Graphic file (type png)
  <use img_trello.png>
 Package pdftex.def Info: img_trello.png used on input line 717.
@@ -1475,7 +1454,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 743--743
 
  []
 
-<img_01.jpg, id=27, 556.0775pt x 181.67876pt>
+<img_01.jpg, id=26, 556.0775pt x 181.67876pt>
 File: img_01.jpg Graphic file (type jpg)
  <use img_01.jpg>
 Package pdftex.def Info: img_01.jpg used on input line 748.
@@ -1483,7 +1462,8 @@ Package pdftex.def Info: img_01.jpg used on input line 748.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./img_kanban.png> <./img_trello.png>]
+ [6 <C:/Users/wsb2/Documents/SmartBrochure/img_kanban.png> <C:/Users/wsb2/Docum
+ents/SmartBrochure/img_trello.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 754--755
 
  []
@@ -1603,7 +1583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 760--760
 
  []
 
-<img_BLE.png, id=33, 298.11375pt x 111.41624pt>
+<img_BLE.png, id=32, 298.11375pt x 111.41624pt>
 File: img_BLE.png Graphic file (type png)
  <use img_BLE.png>
 Package pdftex.def Info: img_BLE.png used on input line 764.
@@ -1643,7 +1623,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--772
 
  []
 
-<img_tempAct.png, id=34, 849.1725pt x 313.17pt>
+<img_tempAct.png, id=33, 849.1725pt x 313.17pt>
 File: img_tempAct.png Graphic file (type png)
  <use img_tempAct.png>
 Package pdftex.def Info: img_tempAct.png used on input line 775.
@@ -1663,7 +1643,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 781--782
 
  []
 
-[7 <./img_01.jpg> <./img_BLE.png> <./img_tempAct.png>]
+[7 <C:/Users/wsb2/Documents/SmartBrochure/img_01.jpg> <C:/Users/wsb2/Documents/
+SmartBrochure/img_BLE.png> <C:/Users/wsb2/Documents/SmartBrochure/img_tempAct.p
+ng>]
 Underfull \hbox (badness 10000) in paragraph at lines 783--784
 
  []
@@ -1693,7 +1675,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 787--788
 
  []
 
-<img_My01.png, id=41, 722.7pt x 1284.8pt>
+<img_My01.png, id=40, 722.7pt x 1284.8pt>
 File: img_My01.png Graphic file (type png)
  <use img_My01.png>
 Package pdftex.def Info: img_My01.png used on input line 791.
@@ -1703,7 +1685,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 799--800
 
  []
 
-<img_exhiDetail01.jpg, id=42, 722.7pt x 1284.8pt>
+<img_exhiDetail01.jpg, id=41, 722.7pt x 1284.8pt>
 File: img_exhiDetail01.jpg Graphic file (type jpg)
  <use img_exhiDetail01.jpg>
 Package pdftex.def Info: img_exhiDetail01.jpg used on input line 803.
@@ -1728,7 +1710,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 810--811
 
  []
 
-<img_exhiDetail02.jpg, id=43, 722.7pt x 1284.8pt>
+<img_exhiDetail02.jpg, id=42, 722.7pt x 1284.8pt>
 File: img_exhiDetail02.jpg Graphic file (type jpg)
  <use img_exhiDetail02.jpg>
 Package pdftex.def Info: img_exhiDetail02.jpg used on input line 814.
@@ -1783,8 +1765,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 821--823
 
  []
 
-[8 <./img_My01.png> <./img_exhiDetail01.jpg>]
-<img_Info01.png, id=48, 722.7pt x 1284.8pt>
+[8 <C:/Users/wsb2/Documents/SmartBrochure/img_My01.png> <C:/Users/wsb2/Document
+s/SmartBrochure/img_exhiDetail01.jpg>]
+<img_Info01.png, id=47, 722.7pt x 1284.8pt>
 File: img_Info01.png Graphic file (type png)
  <use img_Info01.png>
 Package pdftex.def Info: img_Info01.png used on input line 826.
@@ -1859,7 +1842,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
-<img_infoDetail.jpg, id=49, 722.7pt x 1284.8pt>
+<img_infoDetail.jpg, id=48, 722.7pt x 1284.8pt>
 File: img_infoDetail.jpg Graphic file (type jpg)
  <use img_infoDetail.jpg>
 Package pdftex.def Info: img_infoDetail.jpg used on input line 837.
@@ -1949,8 +1932,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 844--845
 
  []
 
-[9 <./img_exhiDetail02.jpg> <./img_Info01.png>]
-<img_setting01.png, id=54, 722.7pt x 1284.8pt>
+[9 <C:/Users/wsb2/Documents/SmartBrochure/img_exhiDetail02.jpg> <C:/Users/wsb2/
+Documents/SmartBrochure/img_Info01.png>]
+<img_setting01.png, id=53, 722.7pt x 1284.8pt>
 File: img_setting01.png Graphic file (type png)
  <use img_setting01.png>
 Package pdftex.def Info: img_setting01.png used on input line 852.
@@ -2116,994 +2100,1535 @@ Underfull \hbox (badness 10000) in paragraph at lines 865--866
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 865--866
-
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10 <./img_infoDetail.jpg> <./img_setting01.png>]
+ [10 <C:/Users/wsb2/Documents/SmartBrochure/img_infoDetail.jpg> <C:/Users/wsb2/
+Documents/SmartBrochure/img_setting01.png>]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -purpose : To show spe-cific page dur-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 c. In onOp-tion-sItem-S-e-lected method, Han-dle
+ []
+
+
+Underfull \hbox (badness 4353) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 au-to-mat-i-cally han-dle clicks on the Home/Up
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -functionality : Search-Ble is im-ple-mented on
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 from Ser-vice. Be-cause search-ing func-tion isnt
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 back-ground. More-over, Users can turn on/off
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 3029) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 use Timer class, An-droid ap-pre-ci-ate '1 = 1
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 6220) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 c. on-LeS-can's main func-tion is com-par-i-son.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 class be-cause if we don't use this class, our
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -purpose : My shows an ex-hi-bi-tion list that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 2359) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -functionality : First tap but-ton on the main
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -purpose : My[]Clicked shows the list of art
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -functionality : My[]Clicked class must need
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 3803) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 a. Im-ageLoad-er-Con-fig-u-ra-tionbi-tion is used for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 af-ter that server sends in-for-ma-tion about the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 a. Im-ageLoad-er-Con-fig-u-ra-tionbi-tion is also used
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 5924) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 sim-i-lar with My[]Clicked. How-ever they are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 gives the de-tailed de-scrip-tion about art work.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -location of source code : Smart-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 Brochure/appsrc/java/com/example/jay/smart[]broch
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 b. se-t-Ex-pla-na-tion method uses some func-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 867--922
+\OT1/ptm/m/n/12 -how/why you used it : Ex-pla-na-tion class is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 867--922
+
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
-<img_flowchart.jpg, id=62, 722.7pt x 426.59375pt>
-File: img_flowchart.jpg Graphic file (type jpg)
- <use img_flowchart.jpg>
-Package pdftex.def Info: img_flowchart.jpg used on input line 871.
-(pdftex.def)             Requested size: 542.02367pt x 319.94452pt.
-
-Overfull \hbox (290.02367pt too wide) in paragraph at lines 871--872
- [] 
- []
-
-<img_capture01.jpg, id=63, 722.7pt x 1284.8pt>
-File: img_capture01.jpg Graphic file (type jpg)
- <use img_capture01.jpg>
-Package pdftex.def Info: img_capture01.jpg used on input line 880.
-(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./img_flowchart.jpg>] <img_capture02.jpg, id=67, 722.7pt x 1284.8pt>
-File: img_capture02.jpg Graphic file (type jpg)
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use img_capture02.jpg>
-Package pdftex.def Info: img_capture02.jpg used on input line 889.
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 924--925
+
+ []
+
+
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<img_flowchart.jpg, id=68, 722.7pt x 426.59375pt>
+File: img_flowchart.jpg Graphic file (type jpg)
+ <use img_flowchart.jpg>
+Package pdftex.def Info: img_flowchart.jpg used on input line 930.
+(pdftex.def)             Requested size: 542.02367pt x 319.94452pt.
+
+Overfull \hbox (290.02367pt too wide) in paragraph at lines 930--931
+ [] 
+ []
+
+<img_capture01.jpg, id=69, 722.7pt x 1284.8pt>
+File: img_capture01.jpg Graphic file (type jpg)
+ <use img_capture01.jpg>
+Package pdftex.def Info: img_capture01.jpg used on input line 939.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 886--894
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
 
  []
 
-<img_capture03.jpg, id=68, 722.7pt x 1284.8pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 935--944
+
+ []
+
+[14 <C:/Users/wsb2/Documents/SmartBrochure/img_flowchart.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<img_capture02.jpg, id=73, 722.7pt x 1284.8pt>
+File: img_capture02.jpg Graphic file (type jpg)
+ <use img_capture02.jpg>
+Package pdftex.def Info: img_capture02.jpg used on input line 948.
+(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--953
+
+ []
+
+[15 <C:/Users/wsb2/Documents/SmartBrochure/img_capture01.jpg>]
+<img_capture03.jpg, id=77, 722.7pt x 1284.8pt>
 File: img_capture03.jpg Graphic file (type jpg)
  <use img_capture03.jpg>
-Package pdftex.def Info: img_capture03.jpg used on input line 899.
+Package pdftex.def Info: img_capture03.jpg used on input line 958.
 (pdftex.def)             Requested size: 130.08038pt x 231.25401pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--904
+Underfull \hbox (badness 10000) in paragraph at lines 954--963
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--904
+Underfull \hbox (badness 10000) in paragraph at lines 954--963
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--904
+Underfull \hbox (badness 10000) in paragraph at lines 954--963
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--904
+Underfull \hbox (badness 10000) in paragraph at lines 954--963
 
  []
 
-[13 <./img_capture01.jpg> <./img_capture02.jpg> <./img_capture03.jpg>]
-<img_capture04.jpg, id=73, 722.7pt x 1284.8pt>
+<img_capture04.jpg, id=78, 722.7pt x 1284.8pt>
 File: img_capture04.jpg Graphic file (type jpg)
  <use img_capture04.jpg>
-Package pdftex.def Info: img_capture04.jpg used on input line 908.
+Package pdftex.def Info: img_capture04.jpg used on input line 967.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 905--913
+Underfull \hbox (badness 10000) in paragraph at lines 964--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 905--913
+Underfull \hbox (badness 10000) in paragraph at lines 964--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 905--913
+Underfull \hbox (badness 10000) in paragraph at lines 964--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 905--913
+Underfull \hbox (badness 10000) in paragraph at lines 964--972
 
  []
 
-<img_capture05.jpg, id=74, 722.7pt x 1284.8pt>
+[16 <C:/Users/wsb2/Documents/SmartBrochure/img_capture02.jpg> <C:/Users/wsb2/Do
+cuments/SmartBrochure/img_capture03.jpg> <C:/Users/wsb2/Documents/SmartBrochure
+/img_capture04.jpg>] <img_capture05.jpg, id=82, 722.7pt x 1284.8pt>
 File: img_capture05.jpg Graphic file (type jpg)
- <use img_capture05.jpg>
-Package pdftex.def Info: img_capture05.jpg used on input line 917.
+
+<use img_capture05.jpg>
+Package pdftex.def Info: img_capture05.jpg used on input line 976.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 914--922
+Underfull \hbox (badness 10000) in paragraph at lines 973--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 914--922
+Underfull \hbox (badness 10000) in paragraph at lines 973--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 914--922
+Underfull \hbox (badness 10000) in paragraph at lines 973--981
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 914--922
+Underfull \hbox (badness 10000) in paragraph at lines 973--981
 
  []
 
-<img_capture06.jpg, id=75, 722.7pt x 1284.8pt>
+<img_capture06.jpg, id=83, 722.7pt x 1284.8pt>
 File: img_capture06.jpg Graphic file (type jpg)
  <use img_capture06.jpg>
-Package pdftex.def Info: img_capture06.jpg used on input line 926.
+Package pdftex.def Info: img_capture06.jpg used on input line 985.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--931
+Underfull \hbox (badness 10000) in paragraph at lines 982--990
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--931
+Underfull \hbox (badness 10000) in paragraph at lines 982--990
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--931
+Underfull \hbox (badness 10000) in paragraph at lines 982--990
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--931
+Underfull \hbox (badness 10000) in paragraph at lines 982--990
 
  []
 
-[14 <./img_capture04.jpg> <./img_capture05.jpg> <./img_capture06.jpg>]
-<img_capture07.jpg, id=79, 722.7pt x 1284.8pt>
+<img_capture07.jpg, id=84, 722.7pt x 1284.8pt>
 File: img_capture07.jpg Graphic file (type jpg)
  <use img_capture07.jpg>
-Package pdftex.def Info: img_capture07.jpg used on input line 935.
+Package pdftex.def Info: img_capture07.jpg used on input line 994.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--941
+Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
-<img_capture08.jpg, id=80, 722.7pt x 1284.8pt>
+
+Underfull \vbox (badness 1484) has occurred while \output is active []
+
+ [17 <C:/Users/wsb2/Documents/SmartBrochure/img_capture05.jpg> <C:/Users/wsb2/D
+ocuments/SmartBrochure/img_capture06.jpg> <C:/Users/wsb2/Documents/SmartBrochur
+e/img_capture07.jpg>] <img_capture08.jpg, id=88, 722.7pt x 1284.8pt>
 File: img_capture08.jpg Graphic file (type jpg)
- <use img_capture08.jpg>
-Package pdftex.def Info: img_capture08.jpg used on input line 944.
+
+<use img_capture08.jpg>
+Package pdftex.def Info: img_capture08.jpg used on input line 1003.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
-<img_capture09.jpg, id=81, 722.7pt x 1284.8pt>
+<img_capture09.jpg, id=89, 722.7pt x 1284.8pt>
 File: img_capture09.jpg Graphic file (type jpg)
  <use img_capture09.jpg>
-Package pdftex.def Info: img_capture09.jpg used on input line 954.
+Package pdftex.def Info: img_capture09.jpg used on input line 1013.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--960
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--960
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--960
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 959--960
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1019
 
  []
 
-[15 <./img_capture07.jpg> <./img_capture08.jpg> <./img_capture09.jpg>]
-<img_capture10.jpg, id=85, 722.7pt x 1284.8pt>
+<img_capture10.jpg, id=90, 722.7pt x 1284.8pt>
 File: img_capture10.jpg Graphic file (type jpg)
  <use img_capture10.jpg>
-Package pdftex.def Info: img_capture10.jpg used on input line 963.
+Package pdftex.def Info: img_capture10.jpg used on input line 1022.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 968--992
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1051
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 968--992
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1051
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 968--992
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1051
 
  []
 
+[18 <C:/Users/wsb2/Documents/SmartBrochure/img_capture08.jpg> <C:/Users/wsb2/Do
+cuments/SmartBrochure/img_capture09.jpg> <C:/Users/wsb2/Documents/SmartBrochure
+/img_capture10.jpg>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -3115,28 +3640,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[16
+[19
 
- <./img_capture10.jpg>] (./SmartBrochure.aux) ) 
+] (C:\Users\wsb2\Documents\SmartBrochure\SmartBrochure.aux) ) 
 Here is how much of TeX's memory you used:
- 2302 strings out of 493117
- 37534 string characters out of 6135433
- 98237 words of memory out of 5000000
- 5738 multiletter control sequences out of 15000+600000
- 36821 words of font info for 72 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
- 37i,8n,23p,902b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/ut
-mbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SmartBrochure.pdf (16 pages, 2677969 bytes).
+ 2047 strings out of 493921
+ 33624 string characters out of 3144879
+ 101520 words of memory out of 3000000
+ 5345 multiletter control sequences out of 15000+200000
+ 36821 words of font info for 72 fonts, out of 3000000 for 9000
+ 844 hyphenation exceptions out of 8191
+ 27i,7n,21p,941b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times
+/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on SmartBrochure.pdf (19 pages, 2697930 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

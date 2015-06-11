@@ -861,6 +861,65 @@ In Setting page, there will be the additional function. For example, there will 
 
 
 \section{Architecture Design and Implementation}
+\subsection{Directory organization}
+\quad Image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\subsection{Code analysis}
+\quad 1) Splash\\\\
+-purpose : To show specific page during downloading date before program starting. \\
+\\ -functionality : Splash is a kind of loading screen. The function of splash is gaining time to get data which is necessary for program. Additionally, we can promote our application name during splash time.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Splash\\
+\\ -class components\\
+\\ a. 'onCreate' method is implemented firstly in activity class like main() in JavaSE. In the onCreate, setContentView shows basic layout which is used to compose main page. By using postDelayed in handler, this method can do function how long loading page appear. \\
+\\ b. onCreateOptionsMenu method does initializing option menu of activity.\\
+\\c. In onOptionsItemSelected method, Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.\\
+\\ -how/why you used it : If you want to implement some program, the program needs time to get source which is vital for program. Splash does function which gains time getting data.\\\\
+\quad 2) SearchBle\\\\
+-purpose : To search beacon which uses Bluetooth Low Energy(BLE).\\
+\\ -functionality : SearchBle is implemented on application background. Usually almost classes are inherited from Activity, but SearchBle is inherited from Service. Because searching function isn’t seen in the smartphone screen but implemented background. Moreover, Users can turn on/off Bluetooth searching function by this class.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/SearchBle\\
+\\ -class components\\
+\\ a. BroadcastReceiver has function which receives intent type message. It is used to realize operation when application completed specific task. If beacon send signal, starts BLE searching when Bluetooth is on by using Bluetooth manager. \\
+\\ b. Timer is basic class in Android. By using Timer class, we can set schedule when searching starts and how long search beacon. When we use Timer class, Android appreciate '1 = 1 millisecond'. Therefore if we want to set searching time 3 seconds, we have to put value 3*1000.\\
+\\c. onLeScan's main function is comparison. This method compares searched beacon device and information in the database. When we search beacon, there are so many beacon even if don't need. If we don’t comparison task, we have to send all beacon data which are not necessary to server. That can provoke data waste. By using this method, we can send appropriate beacon data to server. Additionally, if an appropriate beacon data sent to server, we stop searching the beacon because if we don't stop searching, push alarm will come continuously while audiences watch the exhibition.\\
+\\ d. NotificationCompat is function which makes push alarm. If you turn on Bluetooth and application, push alarm notifies that message "Brochure come", whether getting the brochure or not and go to Push\_Clicked.\\
+\\ -how/why you used it : We have to use Timer class because if we don't use this class, our application will search continuously. That means that smartphone battery consume rapidly. SearchBle is core function because we use beacon device.\\\\
+\quad 3) My\\\\
+-purpose : My shows an exhibition list that users visited before to customer.\\
+\\ -functionality : First tap button on the main page and if you execute SmartBrochure, you can see my page firstly. If you click one of the list, list of the exhibition work appears.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/My\\
+\\ -class components\\
+\\ a. sendId method is the main method in My class. If SmartBrochure got the beacon data which is correct with server data, this method send the beacon id to server. After server gets the beacon data, sends the exhibition data (exhibition name, list of work, image and so on) to SmartBrochure. \\
+\\ b. customAdapter's main function is giving data to list view. In the customAdapter, getView method implement above function.\\
+\\ -how/why you used it : My is first page when user implement Smartbrochure. They can see list and My will provide all of exhibition information which users went. As a result,, users can collect special their brochure list.\\\\
+\quad 4) My\_Clicked\\\\
+-purpose : My\_Clicked shows the list of art work. The list includes name and image of each art work.\\
+\\ -functionality : My\_Clicked class must need communication with server. If application sends the id value which is in the database, after that server sends information about the exhibition which is correct with id to application.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/My\_Clicked\\
+\\ -class components\\
+\\ a. ImageLoaderConfigurationbition is used for implanting image. In the application, image file doesn't store anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
+\\ -how/why you used it : We can't store all image file in the application because application can’t accept many image file. So we use server to use adequate image, because image data is very important in exhibition information.\\\\
+\quad 5) Push\_Clicked\\\\
+-purpose : Push\_Clicked also shows the list of art work. The list includes name and image of each art work.\\
+\\ -functionality : Push\_Clicked also class must need communication with server. However Push\_Clicked is different from My\_Clicked. If application sends the id value searched from beacon not database, after that server sends information about the exhibition which is correct with id to application.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Push\_Clicked\\
+\\ -class components\\
+\\ a. ImageLoaderConfigurationbition is also used in Push\_Clicked. In the application, image file doesn't store anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
+\\ -how/why you used it : Push\_Clicked is very similar with My\_Clicked. However they are different in sending id value to server. My\_Clicked is focus on existing exhibition information. In contrast, Push\_Clicked is focus on new information from beacon search. Because of this difference, we divided them into two classes.\\\\
+\quad 6) Explanation\\\\
+-purpose : Explanation class has function which gives the detailed description about art work. Customers can see image and text in this step.\\
+\\ -functionality : When you click one of the art work list(in the My\_Clicked or Push\_Clicked), Explanation class is implemented. In this process, communication with server is very essential like My\_clicked or Push\_Clicked. Explanation also use image by using URL from server.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Explanation\\
+\\ -class components\\
+\\ a. In the Explanation class, onCreate method's main function is setting image and text about art work. They are given from server. \\
+\\ b. setExplanation method uses some function like DisplayImageOptions and ImageLoaderConfiguration. By using them, we can set image size and etc.\\
+\\ -how/why you used it : Explanation class is the most informative section in our application. Like My\_Clicked, We use server to use adequate image, because image data is very important in exhibition information.\\\\
+
 
 .\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
