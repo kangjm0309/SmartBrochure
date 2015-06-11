@@ -53,6 +53,7 @@ public class SearchBLE extends Service {
     private Handler mHandler;
     private Boolean mScanning;
     private ArrayList<String> devices;
+    private String sending = new String();
 
     private static final int REQUEST_ENABLE_BT = 1;
     // Stops scanning after 10 seconds.
@@ -60,15 +61,15 @@ public class SearchBLE extends Service {
 
     private final String LC0000 = "LC0000";
     private static String url = "http://jung2.maden.kr/beacon_gateway/";
-
     Database data = new Database(this);
     ArrayList<String> beacons;
     Timer mTimer = new Timer();
+    IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
     @Override
     public void onCreate() {
         super.onCreate();
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+
         registerReceiver(mReceiver, filter);
         mHandler = new Handler();
 
@@ -76,9 +77,23 @@ public class SearchBLE extends Service {
         data.open();
         if(data.check())  // 처음 다운로드시 db가 없기떄문에 확인
             data.init();  // db가 비어있을 경우, init();
+        data.updateBeacons(); // 추가된 비콘 있을 경우 추가.
         beacons = data.getBeacons();
         data.close();
 
+        if(mBluetoothAdapter.isEnabled()){
+            Toast.makeText(this, "서치 시작", Toast.LENGTH_SHORT).show();
+            mTimer = new Timer();
+            TimerTask search = new TimerTask(){
+                public void run() {
+                    scanLeDevice(true);
+                }
+            };
+            mTimer.schedule(search, 1000, 20*1000);
+            Log.d("mReceiver", "mTimer.schedule");
+            scanLeDevice(true);
+
+        }
 
     }
 
@@ -87,12 +102,14 @@ public class SearchBLE extends Service {
         public void onReceive(Context context, Intent intent) {
             // TODO Auto-generated method stub
             String action = intent.getAction();
+
             if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
                 int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
                 switch (state) {
-                    case BluetoothAdapter.STATE_TURNING_ON:
+                    case BluetoothAdapter.STATE_ON:
                         Toast.makeText(getApplicationContext(), "블루투스가 연결되었습니다.",Toast.LENGTH_SHORT).show();
                         // 검색 주기 설정
+                        mTimer.cancel();
                         mTimer = new Timer();
                         TimerTask search = new TimerTask(){
                             public void run() {
@@ -100,10 +117,9 @@ public class SearchBLE extends Service {
                                 Log.d("Timer", "search");
                             }
                         };
-                        mTimer.schedule(search, 1000, 10*1000);
+                        mTimer.schedule(search, 1000, 20*1000);
                         Log.d("mReceiver", "mTimer.schedule");
                             scanLeDevice(true);
-                            Toast.makeText(getApplicationContext(), "검색중!", Toast.LENGTH_SHORT).show();
 
                         break;
                     case BluetoothAdapter.STATE_OFF:
@@ -114,6 +130,7 @@ public class SearchBLE extends Service {
             }
 
         }
+
     };
 
     private BluetoothAdapter.LeScanCallback mLeScanCallback = new BluetoothAdapter.LeScanCallback() {
@@ -123,43 +140,59 @@ public class SearchBLE extends Service {
             Log.d("ttt", "onLeScan");
 
             Log.d("ttt", "device.getAddress(): " + device.getAddress());
+            Log.d("hihihihihihihihihihihih", "devices" + devices);
             Handler sHandler = new Handler(Looper.getMainLooper());
             sHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     Boolean check = true;
                     for (int i = 0; i < beacons.size(); i++) {
+                        Log.d("forforforfor", "for문 시작 " + i + "번째");
                         if (beacons.get(i).toString().equals(device.getAddress())) {
                             if (devices.size() == 0) {
-                                devices.add(device.getAddress());
                                 check = false;
                             } else {
                                 for (int j = 0; j < devices.size(); j++) {
-                                    if (devices.get(j).toString().equals(device.getAddress()))
+                                    if (devices.get(j).toString().equals(device.getAddress())) {
+                                        check = true;
                                         break;
-                                    else
+                                    }
+                                    else {
                                         check = false;
+                                    }
                                 }
                             }
                         }
                     }
 
                     if (check == false) {
-                        Toast.makeText(getApplicationContext(), device.getAddress(), Toast.LENGTH_SHORT).show();
+                        scanLeDevice(false);
+                        //Toast.makeText(getApplicationContext(), device.getAddress(), Toast.LENGTH_SHORT).show();
                         try {
+                            devices.add(device.getAddress());
+                            sending = device.getAddress();
+                            Log.d("CheckCheckCheck", "센딩 집어넣는다");
                             data.open();
                             ArrayList<String> checking = data.getHistoryAddress();
                             data.close();
-                            Boolean secondCheck = true;
+                            Boolean secondCheck = false;
                             for(int i = 0; i < checking.size(); i++){
                                 if(device.getAddress().equals(checking.get(i))){
                                     secondCheck = false;
                                     break;
                                 }
+                                else
+                                    secondCheck = true;
                             }
-                            if(secondCheck = true)
+                            if(secondCheck = true) {
+                                Log.d("CheckCheckCheck", "secondCheck = true :: sending = " + sending);
+                                scanLeDevice(false);
+                                secondCheck = true;
+                                check = true;
                                 sendId();
+                            }
                             else{}
+                            scanLeDevice(true);
                         } catch (IOException e) {
                             e.printStackTrace();
                         } catch (JSONException e1) {
@@ -195,11 +228,16 @@ public class SearchBLE extends Service {
 
     private void sendId() throws IOException, JSONException {
         if (devices.size() != 0) {
-            String id = devices.get(0).toString();
+//            String id = devices.get(0).toString();
         }
+        ArrayList<String> id = new ArrayList<String>();
+        id.add(devices.get(devices.size()-1));
 
         HashMap<String, Object> mapReqData = new HashMap<String, Object>();
-        mapReqData.put("beacon_id", devices);
+        Log.d("CheckCheckCheck", "sendid() : : sending = " + sending);
+        Log.d("CheckCheckCheck", "sendid() : : devices" + "["+sending+"]");
+        mapReqData.put("beacon_id", id);
+        Log.d("CheckCheckCheck", "sendid() : : mapReqData = " + mapReqData);
 
         JSONObject beaconObject = new JSONObject(mapReqData);
         JSONObject dataObject = new JSONObject();
@@ -249,12 +287,20 @@ public class SearchBLE extends Service {
 
                 NotificationCompat.Builder b = new NotificationCompat.Builder(this);
 
+                HashMap<String, Object> _mapReqData = new HashMap<String, Object>();
+                _mapReqData.put("_exCd",(String) jaRRE.get("_cd"));
+
+                Transfer transfer = new Transfer();
+                JSONObject jaData = transfer.transData("LC0002", _mapReqData);
+
+                String ehnm = (String)((JSONObject)jaData.get("_ex_inform")).get("_eh_nm");
+
                 b.setAutoCancel(true)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .setWhen(System.currentTimeMillis())
                         .setSmallIcon(R.drawable.ic_launcher)
-                        .setTicker("TeamWSB")
-                        .setContentTitle("브로셔 도착!")
+                        .setTicker("Smart_Brochure")
+                        .setContentTitle(ehnm+" 브로셔 도착!")
                         .setContentText("브로셔를 받으시려면 클릭")
                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
                         .setContentIntent(contentIntent)
@@ -262,7 +308,9 @@ public class SearchBLE extends Service {
 
 
                 NotificationManager notificationManager = (NotificationManager) SearchBLE.this.getSystemService(Context.NOTIFICATION_SERVICE);
-                notificationManager.notify(1, b.build());
+                notificationManager.notify(devices.size(), b.build());
+
+                scanLeDevice(true);
 
 
 
@@ -295,5 +343,14 @@ public class SearchBLE extends Service {
         }
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d("destroy", "꺼질때!!!stopSelf전");
+//        unregisterReceiver(mReceiver);
+//        unregisterReceiver();
+        stopSelf();
+        Log.d("destroy", "꺼질때!!!stopSelf후" );
     }
+
+}

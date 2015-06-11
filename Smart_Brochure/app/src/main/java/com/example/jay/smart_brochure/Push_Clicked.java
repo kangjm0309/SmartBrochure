@@ -189,8 +189,8 @@ public class Push_Clicked extends Activity {
                                 long id) {
 
             Intent i = new Intent(Push_Clicked.this, Explanation.class);
-            startActivity(i);
             i.putExtra("exp", exh_Array.get(position)[2]);
+            startActivity(i);
             overridePendingTransition(0, 0);
         }
     };

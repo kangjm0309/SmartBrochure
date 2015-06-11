@@ -99,7 +99,7 @@ public class Around extends Activity {
     private void init() {
         // TODO Auto-generated method stub
         db.open();
-        db.beaconList();
+        db.updateBeacons();
         b_list = db.getBeacons();
         Log.i("ttt", "b_list.size() : : : " + b_list.size());
         db.close();

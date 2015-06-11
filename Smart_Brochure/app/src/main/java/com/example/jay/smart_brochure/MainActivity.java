@@ -33,6 +33,7 @@ public class MainActivity extends TabActivity {
     Database data = new Database(this);
 
     private BackPressed backbtn;
+    Intent search;
 
 
     @Override
@@ -41,10 +42,10 @@ public class MainActivity extends TabActivity {
             super.onCreate(savedInstanceState);
 
         Boolean checkService = getServiceTaskName();
-        if(checkService == false){
-            Intent i = new Intent(this, SearchBLE.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
-            this.startService(i);
+        if(!checkService){
+            search = new Intent(this, SearchBLE.class);
+            search.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+            this.startService(search);
         }
         backbtn = new BackPressed(this);
 
@@ -125,9 +126,19 @@ public class MainActivity extends TabActivity {
         backbtn.onBackPressed();
     }
 
+
     @Override
     protected void onDestroy() {
         Toast.makeText(this, "onDestroy()", Toast.LENGTH_SHORT).show();
+        data.open();
+        if(data.getOnoff().equals("0")){
+            SearchBLE s = new SearchBLE();
+            this.stopService(new Intent(this, SearchBLE.class));
+            s.onDestroy();
+            Log.d("destroy", "이프문이프이프");
+        }
+        Log.d("destroy", "꺼질때!!!" + data.getOnoff());
+        data.close();
         super.onDestroy();
     }
 

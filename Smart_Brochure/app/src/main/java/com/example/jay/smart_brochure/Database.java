@@ -155,7 +155,7 @@ public class Database {
 
 
     // 사용하는 비콘 리스트 저장
-    public void beaconList(){
+    public void updateBeacons(){
 
         Cursor cursor;
         cursor = mDB.query(Beacon_List, beacons, null, null, null, null, null);
@@ -172,7 +172,7 @@ public class Database {
             return;
         }*/
 
-        String beacon[] = {"78:A5:04:13:3C:FA"};
+        String beacon[] = {"78:A5:04:13:3C:FA", "78:A5:04:13:3D:BD"};
         ArrayList<String> beacons = new ArrayList<String>();
         for(int i = 0 ; i < beacon.length; i++){
             beacons.add(beacon[i]);
@@ -184,6 +184,7 @@ public class Database {
             int k = beacons.size() - int_count;
             for(int i = 0 ; i < k; i++) {
                 values.put(ADDRESS, beacons.get(beacons.size() - i - 1));
+                Log.i("data", "updateBeacons, beacons.get(beacons.size()-i-1) : :" + beacons.get(beacons.size() - i - 1));
             }
             mDB.insert(Beacon_List, null, values);
         }

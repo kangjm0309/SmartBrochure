@@ -26,7 +26,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".SearchBLE"></service>
+        <service android:name=".SearchBLE">
+        </service>
+
+        <service android:name=".Terminate">
+        </service>
+
         <receiver
             android:name=".Auto_Start"
             android:enabled="true"

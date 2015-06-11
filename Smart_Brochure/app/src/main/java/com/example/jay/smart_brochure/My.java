@@ -47,10 +47,10 @@ public class My extends Activity {
     ArrayList<String> address;
     ArrayList<String> code;
     Database data;
+    customAdapter myAdap;
 
     private final String LC0000 = "LC0000";
     private static String url = "http://jung2.maden.kr/beacon_gateway/";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class My extends Activity {
         address = data.getHistoryAddress();
         code = data.getHistoryCode();
         data.close();
-        customAdapter myAdap = new customAdapter(this, name);
+        myAdap = new customAdapter(this, name);
         ListView my_list = (ListView) findViewById(R.id.my_list);
 
         my_list.setAdapter(myAdap);
@@ -250,5 +250,11 @@ public class My extends Activity {
             e.printStackTrace();
             client.getConnectionManager().shutdown(); // 연결 지연 종료
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        myAdap.notifyDataSetChanged();
     }
 }

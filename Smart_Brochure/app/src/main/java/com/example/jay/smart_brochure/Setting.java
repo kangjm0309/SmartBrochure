@@ -32,15 +32,15 @@ public class Setting extends Activity {
         data.open();
         String check = data.getOnoff();
         Log.d("Setting", "check : : "+ check);
-        if (check.equals("0")){
+        if (check.equals("1")){
             btn_onoff.setText("끄기");
             auto_search.setText("자동 검색 : 켜져있음");
-            checkOnOff = false;
+            checkOnOff = true;
         }
         else {
             btn_onoff.setText("켜기");
             auto_search.setText("자동 검색 : 꺼져있음");
-            checkOnOff = true;
+            checkOnOff = false;
         }
         data.close();
     }
@@ -72,10 +72,11 @@ public class Setting extends Activity {
 
         switch (v.getId()) {
             case R.id.btn_onoff:
-                if (checkOnOff == false){
+                if (!checkOnOff){
                     checkOnOff = true;
-                    btn_onoff.setText("켜기");
-                    auto_search.setText("자동 검색 : 꺼져있음");
+                    btn_onoff.setText("끄기");
+                    auto_search.setText("자동 검색 : 켜져있음");
+
                     data.open();
                     data.editOnoff("1");
                     Log.d("세팅", "checkonoff == false 일떄" + data.getOnoff());
@@ -83,8 +84,8 @@ public class Setting extends Activity {
                 }
                 else{
                     checkOnOff = false;
-                    btn_onoff.setText("끄기");
-                    auto_search.setText("자동 검색 : 켜져있음");
+                    btn_onoff.setText("켜기");
+                    auto_search.setText("자동 검색 : 꺼져있음");
                     data.open();
                     data.editOnoff("0");
                     Log.d("세팅", "checkonoff == true 일떄" + data.getOnoff());
