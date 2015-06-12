@@ -474,74 +474,75 @@ Though there is a similar application, named “Jeonsi bogo,” this service is 
 
 I. Introduction\\
 
+II. Index\\
 
-II. Requirement
+III. Requirement
 
-\quad2.1 The Environment for Using Beacon
+\quad3.1 The Environment for Using Beacon
 
-\quad2.1-1 Bluetooth 
+\quad3.1-1 Bluetooth 
 
-\quad2.1-2 OS
+\quad3.1-2 OS
 
-\quad2.2 Server requirement
+\quad3.2 Server requirement
 
-\quad2.2-1 How to send information 
+\quad3.2-1 How to send information 
 
-\quad2.2-2 Need for back-end server
+\quad3.2-2 Need for back-end server
 
-\quad2.3 User requirement 
+\quad3.3 User requirement 
 
-\quad2.3-1 Accuracy
+\quad3.3-1 Accuracy
 
-\quad2.3-2 Unimportant data 
+\quad3.3-2 Unimportant data 
 
-\quad2.3-3 Push alarm
+\quad3.3-3 Push alarm
 
-\quad2.3-4 Exhibition list
+\quad3.3-4 Exhibition list
 
-\quad2.3-5 Map
+\quad3.3-5 Map
 
-\quad2.3-6 Location of work the exhibition 
+\quad3.3-6 Location of work the exhibition 
 
-\quad2.3-7 Work button
+\quad3.3-7 Work button
 
-\quad2.3-8 Work picture
+\quad3.3-8 Work picture
 
-\quad2.3-9 Text box1
+\quad3.3-9 Text box1
 
-\quad2.3-10 Text box2
+\quad3.3-10 Text box2
 
-\quad2.3-11 Voice button
+\quad3.3-11 Voice button
 
-\quad2.3-12 Previous exhibition
+\quad3.3-12 Previous exhibition
 
-\quad2.3-13 Delete function
+\quad3.3-13 Delete function
 
-\quad2.3-14 Reporting problem
+\quad3.3-14 Reporting problem
 
-\quad2.4 Customer requirement\\
+\quad3.4 Customer requirement\\
 
-III. Develop environment
+IV. Develop environment
 
-\quad3.1 Choice of software development platform
+\quad4.1 Choice of software development platform
 
-\quad3.1-1 Which platform and why?
+\quad4.1-1 Which platform and why?
 
-\quad3.1-2 Which programming language and why?
+\quad4.1-2 Which programming language and why?
 
-\quad3.2 A cost estimation
+\quad4.2 A cost estimation
 
-\quad3.3 Information of development environment
+\quad4.3 Information of development environment
 
-\quad3.4 Using commercial cloud platform\\
+\quad4.4 Using commercial cloud platform\\
 
-IV. Specification
+V. Specification
 
-\quad4.1 Modeling for Specifications 
+\quad5.1 Modeling for Specifications 
 
-\quad4.2 Prototype for Specifications
+\quad5.2 Prototype for Specifications
 
-\quad4.3 Specifications for front-end application pages
+\quad5.3 Specifications for front-end application pages
 
 \quad\quad-BLE seraching outside the application
 
@@ -553,19 +554,19 @@ IV. Specification
 
 \quad\quad-More page
 
-\quad4.4 Specifications for Server
+\quad5.4 Specifications for Server
 
 \quad\quad-Filezilla 
 
 \quad\quad-pgadmin \\
 
-V. Architecture Design and Implementation\\
+VI. Architecture Design and Implementation\\
 
-\quad5.1 Overall architecture
+\quad6.1 Overall architecture
 
-\quad5.2 Directory organization
+\quad6.2 Directory organization
 
-\quad5.3 Code analysis
+\quad6.3 Code analysis
 
 \quad\quad-Splash
 
@@ -591,16 +592,20 @@ V. Architecture Design and Implementation\\
 
 \quad\quad-History\\
 
-VI. Use Cases
+VII. Use Cases
 
-\quad6.1 BLE searching and push notice
+\quad7.1 BLE searching and push notice
 
-\quad6.2 Temporary Activity
+\quad7.2 Temporary Activity
 
-\quad6.3 Main Application
+\quad7.3 Main Application\\
 
+VIII. Software Installation Guide
+\quad8.1 How to install?\\
+
+IX. Discussion
 .
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \section{Requirements}
 
 \subsection{Requirement for The Environment for Using Beacon}
@@ -1245,7 +1250,20 @@ User can turn on or off the function searching the BLE. - Turn on\\\\\\\\\\\\\\\
 \end{center}
 \end{figure}
 
-User can turn on or off the function searching the BLE. - Turn off\\\\\\\\
+User can turn on or off the function searching the BLE. - Turn off\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+\section{Software Installation Guide\\}
+\quad8.1 How to install?\\
+
+Enter the Google-Playstore or Appstore, and Search the [SMART BROCHURE] And you can get it. \\\\\\\\
+
+
+\section{Disccusion}
+\quad First of all, it was really hard for us to make the device communicate with beacons.
+Since we didn't have any SDK that works with our beacons, we had to develop the code from nothing. 
+
+
 .
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
