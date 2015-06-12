@@ -945,67 +945,143 @@ Second, [bc.exhibition] table is for  brief information about exhibition. Exhibi
 [bc.piece] table is for detail information about artwork. Artwork has its own code[PK]. \\\\\\\\\\\\\\\\\\\\
 
 \section{Architecture Design and Implementation}
+\subsection{Overall architecture}
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.5]{img_archi}
+    \caption{Overall architecture} 
+\end{center}
+\end{figure}
 \subsection{Directory organization}
-\quad Image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.5]{img_direc}
+    \caption{Directory organization} 
+\end{center}
+\end{figure}
+\quad
+ \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \subsection{Code analysis}
 \quad 1) Splash\\\\
--purpose : To show specific page during downloading date before program starting. \\
+-purpose : To show a cover page during the program is loading on the device. \\
 \\ -functionality : Splash is a kind of loading screen. The function of splash is gaining time to get data which is necessary for program. Additionally, we can promote our application name during splash time.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/Splash\\
+ure/Splash.java\\
 \\ -class components\\
-\\ a. 'onCreate' method is implemented firstly in activity class like main() in JavaSE. In the onCreate, setContentView shows basic layout which is used to compose main page. By using postDelayed in handler, this method can do function how long loading page appear. \\
+\\ a. 'onCreate' method is implemented firstly in the activity class like main() method in JavaSE. In the onCreate, setContentView shows basic layout which is used to compose main page. By using postDelayed in handler, this method can do function how long loading page appear. \\
 \\ b. onCreateOptionsMenu method does initializing option menu of activity.\\
 \\c. In onOptionsItemSelected method, Handle action bar item clicks here. The action bar will automatically handle clicks on the Home/Up button, so long as you specify a parent activity in AndroidManifest.xml.\\
 \\ -how/why you used it : If you want to implement some program, the program needs time to get source which is vital for program. Splash does function which gains time getting data.\\\\
 \quad 2) SearchBle\\\\
--purpose : To search beacon which uses Bluetooth Low Energy(BLE).\\
-\\ -functionality : SearchBle is implemented on application background. Usually almost classes are inherited from Activity, but SearchBle is inherited from Service. Because searching function isn’t seen in the smartphone screen but implemented background. Moreover, Users can turn on/off Bluetooth searching function by this class.\\
+-purpose : To search beacon which uses Bluetooth Low Energy(BLE). \\
+\\ -functionality : SearchBLE is implemented on application background. Usually almost classes inherit Activity class, but SearchBLE inherits Service class because searching function isn’t seen in the smartphone screen but implemented background. This service searches the BLE devices around the user and check if the BLE address is in our database or not. If the address is in our database and it is not the one that user already visited, this service will send the BLE address to the server to get the information of the exhibition and give the push alarm to the user to get the brochure.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/SearchBle\\
+ure/SearchBle.java\\
 \\ -class components\\
-\\ a. BroadcastReceiver has function which receives intent type message. It is used to realize operation when application completed specific task. If beacon send signal, starts BLE searching when Bluetooth is on by using Bluetooth manager. \\
-\\ b. Timer is basic class in Android. By using Timer class, we can set schedule when searching starts and how long search beacon. When we use Timer class, Android appreciate '1 = 1 millisecond'. Therefore if we want to set searching time 3 seconds, we have to put value 3*1000.\\
-\\c. onLeScan's main function is comparison. This method compares searched beacon device and information in the database. When we search beacon, there are so many beacon even if don't need. If we don’t comparison task, we have to send all beacon data which are not necessary to server. That can provoke data waste. By using this method, we can send appropriate beacon data to server. Additionally, if an appropriate beacon data sent to server, we stop searching the beacon because if we don't stop searching, push alarm will come continuously while audiences watch the exhibition.\\
-\\ d. NotificationCompat is function which makes push alarm. If you turn on Bluetooth and application, push alarm notifies that message "Brochure come", whether getting the brochure or not and go to Push\_Clicked.\\
-\\ -how/why you used it : We have to use Timer class because if we don't use this class, our application will search continuously. That means that smartphone battery consume rapidly. SearchBle is core function because we use beacon device.\\\\
-\quad 3) My\\\\
--purpose : My shows an exhibition list that users visited before to customer.\\
-\\ -functionality : First tap button on the main page and if you execute SmartBrochure, you can see my page firstly. If you click one of the list, list of the exhibition work appears.\\
+\\ a. BroadcastReceiver uses the onReceive() method to get the state of the Bluetooth. If the devices’ Bluetooth is on, this starts the Searching BLE service, by using Timer instance, which makes the period of searching time and so on. If the Bluetooth becomes off, this stops searching BLE devices by calling cancel() method in the Timer instance and scanLeDevice() method by giving the parameter as “false”. It is used to realize operation when application completed specific task.\\
+\\ b. Timer is basic class in Android. By using Timer class, we can set schedule when searching starts and how long search beacon. When we use Timer instance, Android appreciate '1 = 1 millisecond'. Therefore, if we want to set searching time 3 seconds, we have to put value 3*1000. In our code, we set it as schedule(search, 10*1000, 20*1000); which meanse it will start searching after 10 secs, and for 20secs, and it will rotate.\\
+\\ c. onLeScan's main function is using Handler, which means it will use the Threads. In the run() method, which is working on the thread, the application will check the database if there is a valid address that our service is using, and if two are matched, this will check whether the user has visited to this exhibition by searching the History table in the Database class. Only when there is no history about the beacon address, it will send the address and the code to the server to get the information about the exhibition and will give the device push-alarm which will help the user to get the brochure. When we search beacon, there are so many beacons even if we don't need. If we don’t figure out whether it is valid or not, we have to send all beacon data which are not necessary to server. That can provoke wasting of data use. By using this method, we can send appropriate beacon data to server. Additionally, if an appropriate beacon data sent to server, the method will save the address in the temporary ArrayList<String> variable to prevent sending same address to the server over and over again. If we don’t do this, push alarm will come continuously while audiences watch the exhibition.\\
+\\ d. sendId() method is the core part of this service which sends the data to the server and get the data from server to the application. Using HashMap<String, Object> type of variable, we put the beacon id and make it to JSONObject, which server wants as the data type to get from the device. After that, by using DefaultHttpClient, the device will get the data from the server as JSONArray type, so we will cast the datatype that we want to use, and make the push alarm by using NotificationCompat class.\\
+\\ -how/why you used it : By using  Auto\_Start class, we made SearchBLE service start when the devices’ booting is completed, only if the auto-search option is on. Therefore, if the user set up the option as on, the user doesn’t need to turn on the application to get the brochure. By only turning on the Bluetooth, this service will search the beacons around the user and send the data to the server and will notify the user by push alarm. This is one of the core concept of IoT..\\\\
+\quad 3) MainActivity\\\\
+-purpose : To show main page and constitute tab view which consist of My, Info, and Setting for customer.\\
+\\ -functionality : MainActivity is the body of SmartBrochure. Most classes are used in this class. The main function is showing main page which is made up of several components.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/My\\
+ure/MainActivity.java\\
 \\ -class components\\
-\\ a. sendId method is the main method in My class. If SmartBrochure got the beacon data which is correct with server data, this method send the beacon id to server. After server gets the beacon data, sends the exhibition data (exhibition name, list of work, image and so on) to SmartBrochure. \\
-\\ b. customAdapter's main function is giving data to list view. In the customAdapter, getView method implement above function.\\
-\\ -how/why you used it : My is first page when user implement Smartbrochure. They can see list and My will provide all of exhibition information which users went. As a result,, users can collect special their brochure list.\\\\
-\quad 4) My\_Clicked\\\\
+\\ a. turnOnBT method instructs whether to turn on or turn off Bluetooth to customers by dialogue. If Bluetooth is turned on before starting application, notification dialogue will not occur on the device.\\
+\\ b. getServiceTaskName checks if the SearchBLE service is now running or not. If it is not running, we will start SearchBLE service in order to search the beacons if the Bluetooth is on.\\
+\\ c. We overrode onDestroy() method.  When the application destroys, we need to turn of the SearchBLE service too, if the auto-searching option is off. Therefore, we opened database in this method to check if the option is turn on or off.\\
+\\ -how/why you used it : MainActivity is foundation of application. We build the tab activity to make the tabs for the pages, My, Info, Setting. We made this class inherit TabActivity, but we will fix this to FragmentActivity because TabActivity is deprecated.\\\\
+\quad 4) My\\\\
 -purpose : My\_Clicked shows the list of art work. The list includes name and image of each art work.\\
-\\ -functionality : My\_Clicked class must need communication with server. If application sends the id value which is in the database, after that server sends information about the exhibition which is correct with id to application.\\
+\\ -functionality : First tab button on the main page and if you execute SmartBrochure, you can see my page firstly. If you click one of the list, list of the exhibition work appears.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/My\_Clicked\\
+ure/My.java\\
 \\ -class components\\
-\\ a. ImageLoaderConfigurationbition is used for implanting image. In the application, image file doesn't store anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
-\\ -how/why you used it : We can't store all image file in the application because application can’t accept many image file. So we use server to use adequate image, because image data is very important in exhibition information.\\\\
-\quad 5) Push\_Clicked\\\\
+\\ a. sendId method does the same function as the sendId method in the SearchBLE. We get the exhibition code and the BLE address that is already saved in the Database when the user visitied the exhibition, and send them to the server to get the exhibition brochure from the server. After server gets the beacon data and the valid exhibition code, the servier will send the exhibition data (exhibition name, list of work, image and so on) to SmartBrochure and we go to the My\_Clicked class to show the brochure.\\
+\\ b. customAdapter's main function is giving data to list view. In the customAdapter, getView method put the data to the list.\\
+\\ c. We made this listview get the OnItemClickListner, so when user touch the list, the page will go to the My\_Clicked page which gets the data of the exhibition.\\
+\\ -how/why you used it : My page gets the list of history from the Database and put them to the listview. We thought that listview is the best way to show the list to the user. Between My and My\_Clicked, the data communication between the device and server occurs.\\\\
+\quad 5) My\_Clicked\\\\
+-purpose : My\_Clicked shows the list of art work of the exhibition that the user visited before. Most of the function is as same as Push\_Clicked.\\
+\\ -functionality : My\_Clicked class must need to communicate with server in order to get the brochure from the server. In the My page we sent the id and exhibition code to the server, we will get the brochure data from the server in My\_Clicked page and will show the brochure.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/My\_Clicked.java\\
+\\ -class components\\
+\\ a. ImageLoaderConfigurationbition is used to show the image from the image URL we get from the server. In the application, image file is not anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
+\\ b. We use customAdapter and OnClickListener, and so on, which is used in other pages also.\\
+\\ -how/why you used it : We communicate with the server here again, because we don’t want to save so many imagefiles to the application database, which will cause some problems of the storage of the device. Instead, we chose to communicate with the sever again, so we gets all of the data we use here from the server.\\\\
+\quad 6) Push\_Clicked\\\\
 -purpose : Push\_Clicked also shows the list of art work. The list includes name and image of each art work.\\
-\\ -functionality : Push\_Clicked also class must need communication with server. However Push\_Clicked is different from My\_Clicked. If application sends the id value searched from beacon not database, after that server sends information about the exhibition which is correct with id to application.\\
+\\ -functionality : Push\_Clicked class must need to communicate with server in order to get the brochure from the server. In the Push page we sent the to the server, we will get the exhibition code and brochure data from the server in Push\_Clicked page and will show the brochure when user clicked the push alarm button which was sent before.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/Push\_Clicked\\
+ure/Push\_Clicked.java\\
 \\ -class components\\
-\\ a. ImageLoaderConfigurationbition is also used in Push\_Clicked. In the application, image file doesn't store anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
-\\ -how/why you used it : Push\_Clicked is very similar with My\_Clicked. However they are different in sending id value to server. My\_Clicked is focus on existing exhibition information. In contrast, Push\_Clicked is focus on new information from beacon search. Because of this difference, we divided them into two classes.\\\\
-\quad 6) Explanation\\\\
--purpose : Explanation class has function which gives the detailed description about art work. Customers can see image and text in this step.\\
-\\ -functionality : When you click one of the art work list(in the My\_Clicked or Push\_Clicked), Explanation class is implemented. In this process, communication with server is very essential like My\_clicked or Push\_Clicked. Explanation also use image by using URL from server.\\
+\\ a. ImageLoaderConfigurationbition is used to show the image from the image URL we get from the server. In the application, image file is not anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. The image URL or the Image file that we used here will never be stored in the database.\\
+\\ b. In the onCreate method, we get the data of the brochure. Here, we need to save the beacon’s id and exhibition code in the database in order to keep the history of user’s exhibiting. We used History class to save the exhibition title, name, and the BLE address. After that, we use the addHistory method to save it in the database with SQLite.\\
+\\ -how/why you used it : Push\_Clicked is very similar with My\_Clicked. However, they are different in sending id value to server. My\_Clicked is focused on existing exhibition information. In contrast, Push\_Clicked is focused on new information from beacon search. While My\_Clicked page sent the beacon’s id and exhibition code, in Push\_Clicked page, we send only the beacon’s id that SearchBLE service has searched to the server. \\\\
+\quad 7) Explanation\\\\
+-purpose : Explanation class has function which gives the detailed description about art work. Users can read the detailed image and the explanation of the specific work that the user wants to see the detail.\\
+\\ -functionality : When you click one of the art works in the list(in the My\_clicked or Push\_Clicked), Explanation class is implemented. In this process, communication with server is very essential like My\_clicked or Push\_Clicked. Explanation also use image by using URL from server.\\
 \\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
-ure/Explanation\\
+ure/Explanation.java\\
 \\ -class components\\
-\\ a. In the Explanation class, onCreate method's main function is setting image and text about art work. They are given from server. \\
-\\ b. setExplanation method uses some function like DisplayImageOptions and ImageLoaderConfiguration. By using them, we can set image size and etc.\\
-\\ -how/why you used it : Explanation class is the most informative section in our application. Like My\_Clicked, We use server to use adequate image, because image data is very important in exhibition information.\\\\
-
-
-.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\ a. In the Explanation class, onCreate method's main function is setting ImageView and TextView which will be used after getting data from the server. They are given from server. At the end of this method, we call the setExplanation() method to set the data.\\
+\\ b. setExplanation method uses some function like DisplayImageOptions and ImageLoaderConfiguration. By using them, we set the image from the imageURL, and the explanation of the artwork.\\
+\\ -how/why you used it : Explanation class is the most informative section in our application. Like My\_Clicked, we use server to use adequate image, because image data is very important in exhibition information. \\\\
+\quad 8) Info\\\\
+-purpose : Info notifies several exhibitions’ information which is what is exhibiting now.\\
+\\ -functionality : Second tab button on the main page so if you execute SmartBrochure, you can't see Info page firstly. If you click Info button, list of several exhibition which are exhibition now appears. We get this information from the server, which means, if the user click on the Info tab button, the device will communicate with the server to get the information.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Info.java\\
+\\ -class components\\
+\\ a. In the Info class, sendId method is the important method because uses server like several other classes. Here, the device will just send the url Id and then the server will send the list of the exhibitions only.\\
+\\ b. Here, we also used ListView to show the list of the exhibitions which users can go to and get the brochure and see the artworks now.\\
+\\ -how/why you used it : This is just a basic page of ListView, to show the list of exhibitions our service is providing. We will get the list from the server when user tries to go to the info page. If the Internet is not on on the device, this page will show nothing beacause it will not get any data from the server. The reason why we made this page is that we thought that users might need the information of the exhibitions and can choose the exhibition that they want to go. They will choose one or several of the exhibitions from the list and when they go to the exhibitions, they can get the brochure on their device.\\\\
+\quad 9) Info\_Clicked\\\\
+-purpose : Info\_Clicked shows exhibition name, location, date and brief explanation.\\
+\\ -functionality : Info\_Clicked class also must need communication with server. If application sends the id value which is in the database, after that server sends information about the exhibition which is correct with id to application.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Info\_Clicked.java\\
+\\ -class components\\
+\\ a. In setInformation, there are so many function to make Info\_Clicked class. To show title, explanation, date and address, use text view.  ImageLoaderConfigurationbition is also used for implanting image like My\_Clicked. In the application, image file doesn't store anywhere. However, in order to use work image, we can use server. When we need some image file, we get URL which has image from server. In other words, just borrow image file when we need. If we go out of the page which has image, image file is removed from application.\\
+\\ -how/why you used it : Info\_Clicked knows us information about exhibition that we can go. People who are interested in art want to kwon exhibition information which they can go nowadays. Also we add some data like exhibition image, brief explanation and so on. These information will satisfy user's needs.\\\\
+\quad 10) Setting\\\\
+-purpose : Setting is used to set automatic search by using Bluetooth and show the version of the application.\\
+\\ -functionality : By setting, users can choose whether searching the beacon devices automatically or not. If you want to get exhibition data when you hang around outside, ust set 'automatic search' on in the setting.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Setting.java\\
+\\ -class components\\
+\\ a. In the onCreate method, auto\_search find signal from beacon which is around user. btn\_onoff set that user turn on/off the automatic search function. At first, we get the on/off data from the database to show the user the current setting.\\
+\\ b. In the onCreate method, auto\_search find signal from beacon which is around user. btn\_onoff set that user turn on/off the automatic search function. At first, we get the on/off data from the database to show the user the current setting.\\
+\\ -how/why you used it : If user always turn on Bluetooth and turn on auto\_search function, user's smartphone battery will be consumed rapidly. Therefore, we thought it is very important to set these functions on/off. This function can save users’ smartphone battery and satisfy the users’ preference.\\\\
+\quad 11) Database\\\\
+-purpose : To store the lists of beacons that our service is using/ will use, the history of the user’s own exhibitions that he/she has visited and got the brochure from it, and save the setting of automatic beacon searching preference.\\
+\\ -functionality : In the services and pages of our service, especially SearchBLE, My, and Setting, we need to use the database to keep the user’s preferences and the history of visiting the exhibitions.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/Database.java\\
+\\ -class components\\
+\\ a. First, the database class inherits SQLiteOpenHelper to use the database with SQLite.\\
+\\ b. setExplanation method uses some function like DisplayImageOptions and ImageLoaderConfiguration. By using them, we set the image from the imageURL, and the explanation of the artwork.\\
+\\ c. init() method - when the user first downloaded this application, the device doesn’t have any database, but we need the list of the beacons that we use. Therefore, when the application was on for the first time, call init() method in Database.java and this will make the list of the beacons and set the ONOFF preference “0”, which means “off”, as default.\\
+\\ d. getOnoff() method - search the CheckOnOff table and get ONOFF row and return in order to check if the onoff setting is on or off.\\
+\\ e. editOnoff() method - get String value as the parameter and edit the ONOFF row in the CheckOnOff table. \\
+\\ f. getList() method - return the list of the S-Brochure table.\\
+\\ g. updateBeacons() method - using Cursor class and ContentValues class, update the beacons that out service use.\\
+\\ h. getBeaconse() method - return the list of the beacons that we are using, to identify the BLE address that is valid for this application.\\
+\\ i. addHistory() method - using the History class, add the beacon’s address and the name and code of the exhibition that user visited to the S\_Brochure table.\\
+\\ j. getHistoryName(), getHistoryAddress(), and getHistoryCode() methods - three of these methods searches the DB and return the beacon’s address and the name and code of the exhibition that user visited with ArrayList<String> type.\\
+\\ k. searchHistory() method - with the parameter of String type, search the DB to find if there is the same address in the DB.\\
+\\ -how/why you used it : We developed this database with SQLite. If some classes(activities) needs the database information, they can instantiate the Database class and use the methods that we have made so that they will be able to access to the Database and get the information they need and edit the database if it is needed. The database is essential to our Smart Brochure service, since we need to manage the history of the user’s visiting exhibitions; if they want to read the previous brochure, they don’t need to go to the exhibition again if they have already visited. Also, the application needs to have the list of the beacons that it should search and send the information to the server, because there are a lot of BLE devices around us. Therefore, we had to give the application the list of beacons that it should send the information if one of them is sensed. Lastly, we have the function of auto-searching setting, so the database has the setting and can figure if the setting is on or off.\\\\
+\quad 12) History\\\\
+-purpose : To make it easier and flexible to keep the database.\\
+\\ -functionality : There are several methods to get the data and give the date to the caller. Other classes will instantiate this class and save data in the object, and will send this object to the database.\\
+\\ -location of source code : SmartBrochure/appsrc/java/com/example/jay/smart\_broch
+ure/History.java\\
+\\ -class components\\
+\\ a. This class has getAddress(), setAddress(), getName(), setName(), getCode(), setCode() method to make the flexibility higher.\\
+\\ -how/why you used it : We just made some methods to get and set the data to and from the database. We will use this class by making it instance in other classes. Save the data in the instance and transfer the instance to the Database. Without this method, it becomes more complex to keep the database.\\\\.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \section{Use Cases}
 
@@ -1018,7 +1094,7 @@ ure/Explanation\\
 
 
 
-.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \begin{figure}[htbp]
 \begin{center}
