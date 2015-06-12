@@ -1,25 +1,91 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context="com.example.jay.smart_brochure.Explanation">
 
-    <ImageView
-        android:id="@+id/exp_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="27"
+        android:background="@drawable/mint">
 
-    <TextView
-        android:id="@+id/exp_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/clicked_back2"
+            android:layout_width="16dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/backpressed"
+            android:onClick="mOnClick"
+            android:paddingTop="22dp"
+            android:layout_marginLeft="13dp"/>
 
-    <TextView
-        android:id="@+id/exp_spec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/exp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#FFFFFF"
+            android:textSize="23.5sp"
+            android:paddingTop="25dp"
+            android:text="EXPLANATION"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="206"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/exp_image"
+            android:layout_width="440dp"
+            android:layout_height="255dp"
+            android:paddingTop="22dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/exp_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_below="@id/exp_image"
+            android:textColor="#FFFFFF"
+            android:paddingTop="22dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"
+            android:paddingTop="12dp"
+            android:layout_below="@id/exp_name"
+            android:layout_centerHorizontal="true"/>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="254dp"
+            android:layout_below="@id/border">
+
+            <TextView
+                android:id="@+id/exp_spec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:paddingTop="12dp"
+                android:layout_centerHorizontal="true"/>
+
+            </ScrollView>
+        
+
+
+        </RelativeLayout>
+
+
 
 </LinearLayout>

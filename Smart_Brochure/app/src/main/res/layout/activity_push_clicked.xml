@@ -1,36 +1,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context="com.example.jay.smart_brochure.Push_Clicked">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/pc_Image"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
-
-            <TextView
-                android:id="@+id/pc_name"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:textSize="30dp"/>
-
-        </LinearLayout>
-
-
-    <ListView
-        android:id="@+id/pushclicked_list"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </ListView>
+        android:layout_height="0dp"
+        android:layout_weight="27"
+        android:background="@drawable/mint">
+        
+        <ImageView
+            android:id="@+id/clicked_back1"
+            android:layout_width="16dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/backpressed"
+            android:onClick="mOnClick"
+            android:paddingTop="22dp"
+            android:layout_marginLeft="13dp"/>
+
+        <TextView
+            android:id="@+id/pc_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#FFFFFF"
+            android:textSize="23.5sp"
+            android:paddingTop="25dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="206">
+        
+        <ImageView
+            android:id="@+id/awlist"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:paddingTop="30dp"
+            android:paddingLeft="15dp"
+            android:src="@drawable/artwork"/>
+
+
+        <ListView
+            android:id="@+id/pushclicked_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="12dp"
+            android:paddingLeft="130dp">
+        </ListView>
+
+        </RelativeLayout>
 
 </LinearLayout>

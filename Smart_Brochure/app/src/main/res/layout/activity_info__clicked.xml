@@ -1,40 +1,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context="com.example.jay.smart_brochure.Explanation">
 
-    <TextView
-        android:id="@+id/info_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="27"
+        android:background="@drawable/mint">
 
-    <ImageView
-        android:id="@+id/info_img"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginBottom="50dp"/>
+        <ImageView
+            android:id="@+id/clicked_back1"
+            android:layout_width="16dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/backpressed"
+            android:onClick="mOnClick"
+            android:paddingTop="22dp"
+            android:layout_marginLeft="13dp"/>
 
-    <TextView
-        android:id="@+id/info_expl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="#FFFFFF"
+            android:textSize="23.5sp"
+            android:paddingTop="25dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/info_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="206"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
 
-    <TextView
-        android:id="@+id/info_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15sp"/>
+        <ImageView
+            android:id="@+id/info_img"
+            android:layout_width="440dp"
+            android:layout_height="255dp"
+            android:paddingTop="22dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/info_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/info_img"
+            android:textColor="#FFFFFF"
+            android:paddingTop="22dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/info_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/info_address"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/info_date"
+            android:layout_centerHorizontal="true"/>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="254dp"
+            android:paddingTop="12dp"
+            android:layout_below="@id/border">
+
+            <TextView
+                android:id="@+id/info_expl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_below="@id/info_img"
+                android:textColor="#FFFFFF"
+                android:layout_centerHorizontal="true"/>
+
+        </ScrollView>
+
+
+
+
+    </RelativeLayout>
+
 
 
 </LinearLayout>

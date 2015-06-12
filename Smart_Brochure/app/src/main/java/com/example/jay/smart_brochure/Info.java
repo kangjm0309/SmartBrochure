@@ -5,6 +5,7 @@ package com.example.jay.smart_brochure;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -53,6 +54,10 @@ public class Info extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        TextView title = (TextView)findViewById(R.id.information);
+        Typeface rb = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Bold.ttf");
+        title.setTypeface(rb);
         Transfer transfer = new Transfer();
         HashMap<String, Object> mapReqData = new HashMap<String, Object>();
 //        mapReqData.put("_pcCd", g.getStringExtra("exp"));
@@ -101,7 +106,10 @@ public class Info extends Activity {
 
             TextView content = (TextView) convertView.findViewById(R.id.info_tv);
 
+            Typeface nanum = Typeface.createFromAsset(getAssets(),
+                    "fonts/NanumBarunGothic.ttf");
             content.setText(arry.get(position));
+            content.setTypeface(nanum);
 
             return convertView;
         }

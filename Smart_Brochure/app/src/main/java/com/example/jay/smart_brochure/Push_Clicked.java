@@ -3,6 +3,7 @@ package com.example.jay.smart_brochure;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -98,28 +99,11 @@ public class Push_Clicked extends Activity {
         my_list.setOnItemClickListener(mItemClickListener);
         myAdap.notifyDataSetChanged();
 
-        ImageView image = (ImageView)findViewById(R.id.pc_Image);
         TextView name = (TextView)findViewById(R.id.pc_name);
 
-
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .cacheInMemory()
-                .cacheOnDisc()
-        .build();
-
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .threadPriority(Thread.NORM_PRIORITY - 2)
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
-                .diskCacheSize(50 * 1024 * 1024) // 50 Mb
-                .tasksProcessingOrder(QueueProcessingType.LIFO)
-//			.writeDebugLogs() // Remove for release app
-                .build();
-
-        ImageLoader.getInstance().init(config);
-        ImageLoader.getInstance().displayImage(exh_img , image, options);
-
+        Typeface rb = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Bold.ttf");
+        name.setTypeface(rb);
         name.setText(exh_title);
     }
 
@@ -168,6 +152,10 @@ public class Push_Clicked extends Activity {
 
             ImageLoader.getInstance().init(config);
             ImageLoader.getInstance().displayImage(arry.get(position)[0] , workImage, options);
+
+            Typeface nanum = Typeface.createFromAsset(getAssets(),
+                    "fonts/NanumBarunGothic.ttf");
+            workname.setTypeface(nanum);
             workname.setText(arry.get(position)[1]);
             myAdap.notifyDataSetChanged();
 

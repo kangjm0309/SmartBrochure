@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/background"
     >
     <LinearLayout
         android:orientation="vertical"
@@ -15,11 +15,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            ></FrameLayout>
+            >
+            <ImageView
+                android:id="@+id/imgTab"
+                android:layout_width="33dp"
+                android:layout_height="33dp" />
+            </FrameLayout>
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
+            android:tabStripEnabled="false"
             />
 
     </LinearLayout>

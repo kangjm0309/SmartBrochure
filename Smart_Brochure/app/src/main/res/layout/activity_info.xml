@@ -1,15 +1,32 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.jay.smart_brochure.Info">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.jay.smart_brochure.My">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30"
+        android:background="@drawable/mint">
+
+        <TextView
+            android:id="@+id/information"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="INFORMATION"
+            android:textColor="#FFFFFF"
+            android:textSize="23.5sp"
+            android:paddingTop="25dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/info_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="0dp"
+        android:layout_weight="206">
     </ListView>
 
-</RelativeLayout>
+</LinearLayout>

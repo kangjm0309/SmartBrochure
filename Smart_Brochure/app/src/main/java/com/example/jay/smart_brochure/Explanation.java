@@ -2,9 +2,11 @@ package com.example.jay.smart_brochure;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,9 +45,15 @@ public class Explanation extends Activity {
         mapReqData.put("_pcCd", g.getStringExtra("exp"));
         jaResData = transfer.transData("LC0003", mapReqData);
 
+        TextView title = (TextView)findViewById(R.id.exp_title);
+        Typeface rb = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Bold.ttf");
+        title.setTypeface(rb);
+
         image = (ImageView) findViewById(R.id.exp_image);
         name = (TextView) findViewById(R.id.exp_name);
         spec = (TextView) findViewById(R.id.exp_spec);
+
 
         // 서버에서 받아서 이미지 및 텍스트 세팅
         setExplanation();
@@ -85,12 +93,23 @@ public class Explanation extends Activity {
 
             name.setText(works.get(1));
             spec.setText(works.get(2));
+            Typeface nanum = Typeface.createFromAsset(getAssets(),
+                    "fonts/NanumBarunGothic.ttf");
+            name.setTypeface(nanum);
+            spec.setTypeface(nanum);
 
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
 
+    public void mOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.clicked_back2:
+                onBackPressed();
+                break;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

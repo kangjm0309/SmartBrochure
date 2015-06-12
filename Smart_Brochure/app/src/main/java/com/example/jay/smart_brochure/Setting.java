@@ -1,22 +1,22 @@
 package com.example.jay.smart_brochure;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 public class Setting extends Activity {
 
     public Database data;
-    private Button btn_onoff;
+    private ImageView btn_onoff;
     private Boolean checkOnOff;
-    private TextView auto_search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,22 +24,31 @@ public class Setting extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        btn_onoff = (Button) findViewById(R.id.btn_onoff);
-        auto_search = (TextView) findViewById(R.id.auto_search);
+        btn_onoff = (ImageView) findViewById(R.id.btn_onoff);
         data = new Database(this);
+        TextView bSet = (TextView)findViewById(R.id.beacon_set);
+        TextView bEx = (TextView)findViewById(R.id.beacon_ex);
+        TextView bTitle = (TextView)findViewById(R.id.setting_title);
+        Typeface rbm = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Medium.ttf");
+        Typeface rbr = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Regular.ttf");
+        Typeface rbb = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Bold.ttf");
+        bTitle.setTypeface(rbb);
+        bSet.setTypeface(rbm);
+        bEx.setTypeface(rbr);
 
         // db에서 onoff 설정 상태 불러와서 설정
         data.open();
         String check = data.getOnoff();
         Log.d("Setting", "check : : "+ check);
         if (check.equals("1")){
-            btn_onoff.setText("끄기");
-            auto_search.setText("자동 검색 : 켜져있음");
+            btn_onoff.setImageResource(R.drawable.on_button);
             checkOnOff = true;
         }
         else {
-            btn_onoff.setText("켜기");
-            auto_search.setText("자동 검색 : 꺼져있음");
+            btn_onoff.setImageResource(R.drawable.off_button);
             checkOnOff = false;
         }
         data.close();
@@ -74,8 +83,7 @@ public class Setting extends Activity {
             case R.id.btn_onoff:
                 if (!checkOnOff){
                     checkOnOff = true;
-                    btn_onoff.setText("끄기");
-                    auto_search.setText("자동 검색 : 켜져있음");
+                    btn_onoff.setImageResource(R.drawable.on_button);
 
                     data.open();
                     data.editOnoff("1");
@@ -84,8 +92,7 @@ public class Setting extends Activity {
                 }
                 else{
                     checkOnOff = false;
-                    btn_onoff.setText("켜기");
-                    auto_search.setText("자동 검색 : 꺼져있음");
+                    btn_onoff.setImageResource(R.drawable.off_button);
                     data.open();
                     data.editOnoff("0");
                     Log.d("세팅", "checkonoff == true 일떄" + data.getOnoff());

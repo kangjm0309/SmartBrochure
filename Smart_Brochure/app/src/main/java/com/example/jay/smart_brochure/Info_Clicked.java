@@ -3,9 +3,11 @@ package com.example.jay.smart_brochure;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -90,12 +92,29 @@ public class Info_Clicked extends Activity {
             info_date.setText(information.get(3));
             info_address.setText(information.get(4));
 
+            Typeface rb = Typeface.createFromAsset(getAssets(),
+                    "fonts/Roboto-Bold.ttf");
+            Typeface nanum = Typeface.createFromAsset(getAssets(),
+                    "fonts/NanumBarunGothic.ttf");
+            info_title.setTypeface(rb);
+            info_expl.setTypeface(nanum);
+            info_date.setTypeface(nanum);
+            info_address.setTypeface(nanum);
+
+
 
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
 
+    public void mOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.clicked_back1:
+                onBackPressed();
+                break;
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

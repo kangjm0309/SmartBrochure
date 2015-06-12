@@ -11,7 +11,10 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
@@ -80,13 +83,13 @@ public class MainActivity extends TabActivity {
 
         intent = new Intent(this, My.class);
         spec = tabHost.newTabSpec("My")
-                .setIndicator("My", res.getDrawable(android.R.drawable.sym_action_chat))
+                .setIndicator("", res.getDrawable(R.drawable.my_indicator))
                 .setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent(this, Info.class);
         spec = tabHost.newTabSpec("Info")
-                .setIndicator("Info", res.getDrawable(android.R.drawable.sym_action_email))
+                .setIndicator("", res.getDrawable(R.drawable.info_indicator))
                 .setContent(intent);
         tabHost.addTab(spec);
 
@@ -99,8 +102,10 @@ public class MainActivity extends TabActivity {
 
         intent = new Intent(this, Setting.class);
         spec = tabHost.newTabSpec("Settings")
-                .setIndicator("Settings", res.getDrawable(android.R.drawable.sym_action_call))
+                .setIndicator("", getResources().getDrawable(R.drawable.setting_indicator))
                 .setContent(intent);
+       // mTabHost.addTab(setIndicator(this,mTabHost.newTabSpec(Commons.
+       // TAG_HOME_CONTAINER_FRAGMENT),R.id.imgTab,R.drawable.home_selector,"Home"),HomeContainerFragment.class,null);
         tabHost.addTab(spec);
 
         tabHost.setCurrentTab(0);

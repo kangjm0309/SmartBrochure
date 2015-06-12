@@ -3,6 +3,7 @@ package com.example.jay.smart_brochure;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -57,6 +58,10 @@ public class My extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        TextView title = (TextView)findViewById(R.id.my_title);
+        Typeface rb = Typeface.createFromAsset(getAssets(),
+                "fonts/Roboto-Bold.ttf");
+        title.setTypeface(rb);
         data = new Database(this);
         name = new ArrayList<String>();
         address = new ArrayList<String>();
@@ -101,7 +106,13 @@ public class My extends Activity {
             convertView = li.inflate(R.layout.my_layout, null);
 
             TextView content = (TextView) convertView.findViewById(R.id.my_tv);
-
+            TextView where = (TextView) convertView.findViewById(R.id.my_where);
+            TextView when = (TextView) convertView.findViewById(R.id.my_when);
+            Typeface nb = Typeface.createFromAsset(getAssets(),
+                    "fonts/NanumBarunGothicBold.ttf");
+            content.setTypeface(nb);
+            where.setTypeface(nb);
+            when.setTypeface(nb);
             content.setText(arry.get(position));
 
             return convertView;
