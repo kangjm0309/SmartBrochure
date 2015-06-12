@@ -541,13 +541,17 @@ IV. Specification
 
 \quad\quad-More page
 
-\quad4.4 Specifications for Server\\
+\quad4.4 Specifications for Server
+
+\quad\quad-Filezilla 
+
+\quad\quad-pgadmin \\
 
 V. Architecture Design and Implementation\\
 
 VI. Use Cases
 \\\\\\\\\\
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \section{Requirements}
 
 \subsection{Requirement for The Environment for Using Beacon}
@@ -807,7 +811,7 @@ This is the first page of application. And you can access this page by tab menu 
 
 [My History Page02] 
 
-This is the detail page of the exhibition01. To access this page, applications has to communicate with the back-end server. Server will send the data of Exhibition 01 which the user already downloaded by beacon communication at that Exhibition. On Navigation bar, there is the name of the exhibition. Under the navigation bar, the left side of the first cell,  there is main image of exhibition. And Next to the main image, the right side of the first cell, there is the brief explanation for this exhibition. There will be the information of this exhibition such like the theme of exhibition, the name of exhibition center, address of exhibition center. Below First cell, there is the list of artwork which is displayed in this exhibition.  user can see the detail information about the artwork such as image of artwork, text explanation of artist, or voice-audio explanation. \\\\
+This is the detail page of the exhibition01. To access this page, applications has to communicate with the back-end server. Server will send the data of Exhibition 01 which the user already downloaded by beacon communication at that Exhibition. On Navigation bar, there is the name of the exhibition. Under the navigation bar, the left side of the first cell,  there is main image of exhibition. And Next to the main image, the right side of the first cell, there is the brief explanation for this exhibition. There will be the information of this exhibition such like the theme of exhibition, the name of exhibition center, address of exhibition center. Below First cell, there is the list of artwork which is displayed in this exhibition.  user can see the detail information about the artwork such as image of artwork, text explanation of artist, or voice-audio explanation. \\\\\\
 
 \begin{figure}[htbp]
 \begin{center}
@@ -857,12 +861,92 @@ This page shows the detail information of the exhibition. user can move to the e
 [Setting Page]
 
 In Setting page, there will be the additional function. For example, there will be the on/off button that control the searching BLE. If the user makes the button-state [on], smartphone will search beacon signal and get beacon id ( explained and [0)BLE searching outside the application]). And if user makes the button-state [off], smartphone will not search any beacon signal outside the application. And there will be another board for inform the latest version or notice etc. \\\\\\\\\\\\\\\\\\\\\\\\\\
+
 \subsection{Specifications for Server}
 
+\quad 1) Filezilla \\
+We use the [filezilla] to upload the data such like image, and text for exhibition. FileZilla is free-open source cross platform. It consists of filezilla client and filezilla server. It can used at windows, mac os, and linux. \\
+
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_filezilla}
+    \caption{filezilla01} 
+\end{center}
+\end{figure}
+
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_filezilla02}
+    \caption{filezilla02} 
+\end{center}
+\end{figure}
+
+If artist want to upload the data of his exhibition, he needs to contact us and send the data to us first. After receiving data from artist, we can upload the exhibition data to our server. Then, data is stored at our web server, and wail the signal calling it.\\\\\\\\\\\\\\
+
+\quad 2) Pgadmin \\
+
+We use [pgadmin] for make and control the database. 
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin01}
+    \caption{pgadmin} 
+\end{center}
+\end{figure}
+
+In first picture, there are tables of our database. We made 5 tables.\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin02}
+    \caption{pgadmin table01} 
+\end{center}
+\end{figure}
+
+First, [bc.exh.device] table is for beacon id [PK](This beacon is at the entrance of the exhibition). At this table, we make the exhibition code and match to beacon id. And we make the exhibition code to.\\\\\\\\\\\\\\\\\\
+
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin002}
+    \caption{pgadmin table02} 
+\end{center}
+\end{figure}
+
+Second, [bc.exhibition] table is for  brief information about exhibition. Exhibition code is  [PK]. This table is connected to [bc.exh.device]table.\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin003}
+    \caption{pgadmin table03} 
+\end{center}
+\end{figure}
+
+[bc.file] table is for image files. There is the 3 type integers. Type integer 1 is for exhibition main image. It is used at My history page02, and Information page02. Type integer 2 is for thumbnail image of artwork. It is used at My history page 02. Type integer 3 is for the image of artwork. It is used My history page 03.\\\\\\\\\\\\\\
+
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin004}
+    \caption{pgadmin table04} 
+\end{center}
+\end{figure}
+
+[bc.pc.device] table is for beacon id[PK]. But this beacon is located nearby artwork. If user goes to artwork, then application recognize the beacon and send to server, this table. \\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.2]{img_pgadmin005}
+    \caption{pgadmin table05} 
+\end{center}
+\end{figure}
+
+[bc.piece] table is for detail information about artwork. Artwork has its own code[PK]. \\\\\\\\\\\\\\\\\\\\
 
 \section{Architecture Design and Implementation}
 \subsection{Directory organization}
-\quad Image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\quad Image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \subsection{Code analysis}
 \quad 1) Splash\\\\
 -purpose : To show specific page during downloading date before program starting. \\
@@ -921,18 +1005,27 @@ ure/Explanation\\
 \\ -how/why you used it : Explanation class is the most informative section in our application. Like My\_Clicked, We use server to use adequate image, because image data is very important in exhibition information.\\\\
 
 
-.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \section{Use Cases}
 
 \begin{figure}[htbp]
 \begin{center}
     \includegraphics[scale=0.75]{img_flowchart}
-    \caption{Beacon Page03} 
+    \caption{Application Flowchart} 
 \end{center}
 \end{figure}
 
 .\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\begin{figure}[htbp]
+\begin{center}
+    \includegraphics[scale=0.75]{img_serverFlowchart}
+    \caption{Server Flowchart} 
+\end{center}
+\end{figure}
+
+.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \quad6-1) BLE searching and push notice
 \begin{figure}[htbp]
 \begin{center}
@@ -959,7 +1052,7 @@ ure/Explanation\\
     \caption{Temporary Activity02} 
 \end{center}
 \end{figure}
-\\\\\\\\
+\\
 
 \quad6-3) Main Application - My History Page01\\
 \begin{figure}[htbp]
@@ -968,7 +1061,7 @@ ure/Explanation\\
     \caption{My History01} 
 \end{center}
 \end{figure}\\
-\quad User will see this page when he run the application. It is the first page of main application. First, there is tab menu under the screen. By this tab menu, user can move to page he want to see.  This page is for user own. The data which he received from server and saw through temporary activity is stacked at this page. \\\\\\\\
+\quad User will see this page when he run the application. It is the first page of main application. First, there is tab menu under the screen. By this tab menu, user can move to page he want to see.  This page is for user own. The data which he received from server and saw through temporary activity is stacked at this page. But this page only store the name of exhibition. Because the memory of smartphone. If user touch some exhibition which want to see again, then application send to the server the [eh.code] and get the data of that exhibition.\\\\\\\\\\\\\\\
 
 \quad6-3) Main Application - My History Page02\\
 \begin{figure}[htbp]
@@ -977,7 +1070,7 @@ ure/Explanation\\
     \caption{My History02} 
 \end{center}
 \end{figure}\\
-\quad This page shows the detail information about the exhibition. User can see the brief details about the exhibition theme, the Artist, and the list of artwork which is displayed on that exhibition. \\\\\\\\
+\quad This page shows the detail information about the exhibition. User can see the brief details about the exhibition theme, the Artist, and the list of artwork which is displayed on that exhibition. \\\\
 
 \quad6-3) Main Application - My History Page03\\
 \begin{figure}[htbp]
@@ -988,7 +1081,7 @@ ure/Explanation\\
 \end{figure}\\
 \quad If user touch any artwork at the My History Page01, user can see the detail information about that artwork like this page.\\\\\\\\
 
-\quad6-3) Main Application - Information Page
+\quad6-3) Main Application - Information Page01
 \begin{figure}[htbp]
 \begin{center}
     \includegraphics[scale=0.2]{img_capture07}
@@ -996,8 +1089,9 @@ ure/Explanation\\
 \end{center}
 \end{figure}
 
-This is the second menu page of the application. User can move to this page from the other using tab menu under the screen. This page is for inform about the other exhibition. On the screen, there will be the list of exhibition that user has not seen yet. If user touch the INFO menu from other page, or swipe down the list, then application connect to the server and get the data of the list of the exhibition. It means, user can refresh the list whenever he wants.\\\\\\\\
+This is the second menu page of the application. User can move to this page from the other using tab menu under the screen. This page is for inform about the other exhibition. On the screen, there will be the list of exhibition that user has not seen yet. If user touch the INFO menu from other page, or swipe down the list, then application connect to the server([bc.exhibition]) and get the data of the list of the exhibition. It means, user can refresh the list whenever he wants.\\\\\\\\\\\\\\\\
 
+\quad6-3) Main Application - Information Page02
 \begin{figure}[htbp]
 \begin{center}
     \includegraphics[scale=0.2]{img_capture08}
@@ -1005,7 +1099,7 @@ This is the second menu page of the application. User can move to this page from
 \end{center}
 \end{figure}
 
-If user select one exhibition, he can see the detail information about that exhibition such like the main image of the exhibition, information about the artist, the address of the exhibition and so on. \\\\\\\\
+If user select one exhibition, he can see the detail information about that exhibition such like the main image of the exhibition, information about the artist, the address of the exhibition and so on. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \quad6-3) Main Application - Setting Page
 \begin{figure}[htbp]
@@ -1015,7 +1109,7 @@ If user select one exhibition, he can see the detail information about that exhi
 \end{center}
 \end{figure}
 
-User can turn on or off the function searching the BLE. - Turn on\\\\\\\\
+User can turn on or off the function searching the BLE. - Turn on\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 \begin{figure}[htbp]
 \begin{center}
