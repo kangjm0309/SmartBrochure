@@ -1,132 +1,161 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.26)  14 JUN 2015 19:48
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.29)  12 JUN 2015 22:23
+>>>>>>> 7906b4f54a17f5c63573da079f8fbb94a4e994fc
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**SmartBrochure.tex
-(./SmartBrochure.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+**C:/Users/최은희/Documents/SmartBrochure/SmartBrochure.tex
+(C:/Users/최은희/Documents/SmartBrochure/SmartBrochure.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.cls"
+Document Class: IEEEtran 2014/09/17 V1.8a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
 \@IEEEtrantmpcountA=\count79
 \@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 458.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
-\@IEEEnormalsizeunitybaselineskip=\dimen104
+\@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
-\CLASSINFOnormalsizebaselineskip=\dimen105
-\CLASSINFOnormalsizeunitybaselineskip=\dimen106
-\IEEEnormaljot=\dimen107
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1039.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
-\IEEEilabelindentA=\dimen108
-\IEEEilabelindentB=\dimen109
-\IEEEilabelindent=\dimen110
-\IEEEelabelindent=\dimen111
-\IEEEdlabelindent=\dimen112
-\IEEElabelindent=\dimen113
-\IEEEiednormlabelsep=\dimen114
-\IEEEiedmathlabelsep=\dimen115
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1039.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
 \IEEEiedtopsep=\skip41
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@IEEEsubequation=\count85
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
 \abovecaptionskip=\skip42
 \belowcaptionskip=\skip43
-\c@figure=\count86
-\c@table=\count87
-\@IEEEeqnnumcols=\count88
-\@IEEEeqncolcnt=\count89
-\@IEEEsubeqnnumrollback=\count90
-\@IEEEtmpitemindent=\dimen116
-\c@IEEEbiography=\count91
-\@IEEEtranrubishbin=\box26
-) (/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count92
+\Gread@gobject=\count94
 ))
-\Gin@req@height=\dimen117
-\Gin@req@width=\dimen118
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
-(./SmartBrochure.aux)
-\openout1 = `SmartBrochure.aux'.
-
+(C:\Users\최은희\Documents\SmartBrochure\SmartBrochure.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 354.
 LaTeX Font Info:    ... okay on input line 354.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 354.
@@ -140,67 +169,21 @@ LaTeX Font Info:    ... okay on input line 354.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 354.
 LaTeX Font Info:    ... okay on input line 354.
 
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+-- Lines per column: 56 (exact).
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
-\scratchdimen=\dimen119
-\scratchbox=\box27
-\nofMPsegments=\count94
-\nofMParguments=\count95
+\scratchcounter=\count95
+\scratchdimen=\dimen127
+\scratchbox=\box28
+\nofMPsegments=\count96
+\nofMParguments=\count97
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count96
-\MPscratchDim=\dimen120
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
+\MPscratchCnt=\count98
+\MPscratchDim=\dimen128
+\MPnumerator=\count99
+\makeMPintoPDFobject=\count100
 \everyMPtoPDFconversion=\toks17
-) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
 Underfull \hbox (badness 10000) in paragraph at lines 411--415
 
  []
@@ -505,7 +488,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
@@ -1145,8 +1128,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 727--728
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 727--728
-\OT1/cmr/m/n/12 30\OML/cmm/m/it/12 permonth:Somaybetherewillbeadditional$\OT1/p
-tm/m/n/12 360
+$\OT1/cmr/m/n/12 30\OML/cmm/m/it/12 permonth:Somaybetherewillbeadditional$\OT1/
+ptm/m/n/12 360
  []
 
 Missing character: There is no � in font ptmr7t!
@@ -1214,7 +1197,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
-<img_kanban.png, id=24, 537.00626pt x 265.99374pt>
+<img_kanban.png, id=23, 537.00626pt x 265.99374pt>
 File: img_kanban.png Graphic file (type png)
  <use img_kanban.png>
 Package pdftex.def Info: img_kanban.png used on input line 768.
@@ -1224,7 +1207,7 @@ Overfull \hbox (16.50247pt too wide) in paragraph at lines 768--769
  [] 
  []
 
-<img_trello.png, id=26, 1298.8525pt x 714.67pt>
+<img_trello.png, id=25, 1298.8525pt x 714.67pt>
 File: img_trello.png Graphic file (type png)
  <use img_trello.png>
 Package pdftex.def Info: img_trello.png used on input line 775.
@@ -1337,7 +1320,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 801--801
 
  []
 
-<img_01.jpg, id=27, 556.0775pt x 181.67876pt>
+<img_01.jpg, id=26, 556.0775pt x 181.67876pt>
 File: img_01.jpg Graphic file (type jpg)
  <use img_01.jpg>
 Package pdftex.def Info: img_01.jpg used on input line 806.
@@ -1345,7 +1328,8 @@ Package pdftex.def Info: img_01.jpg used on input line 806.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./img_kanban.png> <./img_trello.png>]
+ [6 <C:/Users/최은희/Documents/SmartBrochure/img_kanban.png> <C:/Users/최�
+�희/Documents/SmartBrochure/img_trello.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 812--813
 
  []
@@ -1465,7 +1449,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 818--818
 
  []
 
-<img_BLE.png, id=33, 298.11375pt x 111.41624pt>
+<img_BLE.png, id=32, 298.11375pt x 111.41624pt>
 File: img_BLE.png Graphic file (type png)
  <use img_BLE.png>
 Package pdftex.def Info: img_BLE.png used on input line 822.
@@ -1505,7 +1489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
-<img_tempAct.png, id=34, 849.1725pt x 313.17pt>
+<img_tempAct.png, id=33, 849.1725pt x 313.17pt>
 File: img_tempAct.png Graphic file (type png)
  <use img_tempAct.png>
 Package pdftex.def Info: img_tempAct.png used on input line 833.
@@ -1525,7 +1509,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 839--840
 
  []
 
-[7 <./img_01.jpg> <./img_BLE.png> <./img_tempAct.png>]
+[7 <C:/Users/최은희/Documents/SmartBrochure/img_01.jpg> <C:/Users/최은희/
+Documents/SmartBrochure/img_BLE.png> <C:/Users/최은희/Documents/SmartBrochur
+e/img_tempAct.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 841--842
 
  []
@@ -1555,7 +1541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
 
-<img_My01.png, id=41, 722.7pt x 1284.8pt>
+<img_My01.png, id=40, 722.7pt x 1284.8pt>
 File: img_My01.png Graphic file (type png)
  <use img_My01.png>
 Package pdftex.def Info: img_My01.png used on input line 849.
@@ -1565,7 +1551,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 857--858
 
  []
 
-<img_exhiDetail01.jpg, id=42, 722.7pt x 1284.8pt>
+<img_exhiDetail01.jpg, id=41, 722.7pt x 1284.8pt>
 File: img_exhiDetail01.jpg Graphic file (type jpg)
  <use img_exhiDetail01.jpg>
 Package pdftex.def Info: img_exhiDetail01.jpg used on input line 861.
@@ -1595,13 +1581,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 868--869
 
  []
 
-<img_exhiDetail02.jpg, id=43, 722.7pt x 1284.8pt>
+<img_exhiDetail02.jpg, id=42, 722.7pt x 1284.8pt>
 File: img_exhiDetail02.jpg Graphic file (type jpg)
  <use img_exhiDetail02.jpg>
 Package pdftex.def Info: img_exhiDetail02.jpg used on input line 872.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-[8 <./img_My01.png> <./img_exhiDetail01.jpg>]
+[8 <C:/Users/최은희/Documents/SmartBrochure/img_My01.png> <C:/Users/최은�
+�/Documents/SmartBrochure/img_exhiDetail01.jpg>]
 Underfull \hbox (badness 1502) in paragraph at lines 879--881
 []\OT1/ptm/m/n/12 This is the de-tail page of art-work. On the
  []
@@ -1651,7 +1638,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--881
 
  []
 
-<img_Info01.png, id=48, 722.7pt x 1284.8pt>
+<img_Info01.png, id=47, 722.7pt x 1284.8pt>
 File: img_Info01.png Graphic file (type png)
  <use img_Info01.png>
 Package pdftex.def Info: img_Info01.png used on input line 884.
@@ -1726,13 +1713,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--892
 
  []
 
-<img_infoDetail.jpg, id=49, 722.7pt x 1284.8pt>
+<img_infoDetail.jpg, id=48, 722.7pt x 1284.8pt>
 File: img_infoDetail.jpg Graphic file (type jpg)
  <use img_infoDetail.jpg>
 Package pdftex.def Info: img_infoDetail.jpg used on input line 895.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-[9 <./img_exhiDetail02.jpg> <./img_Info01.png>]
+[9 <C:/Users/최은희/Documents/SmartBrochure/img_exhiDetail02.jpg> <C:/Users/
+최은희/Documents/SmartBrochure/img_Info01.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 902--903
 
  []
@@ -1817,7 +1805,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 902--903
 
  []
 
-<img_setting01.png, id=54, 722.7pt x 1284.8pt>
+<img_setting01.png, id=53, 722.7pt x 1284.8pt>
 File: img_setting01.png Graphic file (type png)
  <use img_setting01.png>
 Package pdftex.def Info: img_setting01.png used on input line 910.
@@ -1895,14 +1883,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 921--923
 
 Underfull \vbox (badness 2799) has occurred while \output is active []
 
- [10 <./img_infoDetail.jpg> <./img_setting01.png>]
-<img_filezilla.png, id=59, 1176.395pt x 741.77126pt>
+ [10 <C:/Users/최은희/Documents/SmartBrochure/img_infoDetail.jpg> <C:/Users/
+최은희/Documents/SmartBrochure/img_setting01.png>]
+<img_filezilla.png, id=58, 1176.395pt x 741.77126pt>
 File: img_filezilla.png Graphic file (type png)
  <use img_filezilla.png>
 Package pdftex.def Info: img_filezilla.png used on input line 927.
 (pdftex.def)             Requested size: 235.27483pt x 148.35162pt.
 
-<img_filezilla02.png, id=60, 1176.395pt x 740.7675pt>
+<img_filezilla02.png, id=59, 1176.395pt x 740.7675pt>
 File: img_filezilla02.png Graphic file (type png)
 
 <use img_filezilla02.png>
@@ -1948,7 +1937,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 942--943
 
  []
 
-<img_pgadmin01.png, id=61, 1141.26375pt x 732.7375pt>
+<img_pgadmin01.png, id=60, 1141.26375pt x 732.7375pt>
 File: img_pgadmin01.png Graphic file (type png)
  <use img_pgadmin01.png>
 Package pdftex.def Info: img_pgadmin01.png used on input line 947.
@@ -1958,7 +1947,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 952--953
 
  []
 
-<img_pgadmin02.png, id=62, 1140.26pt x 730.73pt>
+<img_pgadmin02.png, id=61, 1140.26pt x 730.73pt>
 File: img_pgadmin02.png Graphic file (type png)
  <use img_pgadmin02.png>
 Package pdftex.def Info: img_pgadmin02.png used on input line 956.
@@ -2018,14 +2007,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 961--962
 
  []
 
-<img_pgadmin002.png, id=63, 1141.26375pt x 730.73pt>
+<img_pgadmin002.png, id=62, 1141.26375pt x 730.73pt>
 File: img_pgadmin002.png Graphic file (type png)
  <use img_pgadmin002.png>
 Package pdftex.def Info: img_pgadmin002.png used on input line 966.
 (pdftex.def)             Requested size: 228.2487pt x 146.1434pt.
 
-[11 <./img_filezilla.png> <./img_filezilla02.png> <./img_pgadmin01.png> <./img_
-pgadmin02.png>]
+[11 <C:/Users/최은희/Documents/SmartBrochure/img_filezilla.png> <C:/Users/�
+�은희/Documents/SmartBrochure/img_filezilla02.png> <C:/Users/최은희/Docume
+nts/SmartBrochure/img_pgadmin01.png> <C:/Users/최은희/Documents/SmartBrochur
+e/img_pgadmin02.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 971--972
 []\OT1/ptm/m/n/12 Second, [bc.exhibition] ta-ble is for brief
  []
@@ -2045,7 +2036,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 971--972
 
  []
 
-<img_pgadmin003.png, id=71, 1142.2675pt x 731.73375pt>
+<img_pgadmin003.png, id=70, 1142.2675pt x 731.73375pt>
 File: img_pgadmin003.png Graphic file (type png)
 
 <use img_pgadmin003.png>
@@ -2086,7 +2077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 980--981
 
  []
 
-<img_pgadmin004.png, id=72, 1144.275pt x 729.72626pt>
+<img_pgadmin004.png, id=71, 1144.275pt x 729.72626pt>
 File: img_pgadmin004.png Graphic file (type png)
  <use img_pgadmin004.png>
 Package pdftex.def Info: img_pgadmin004.png used on input line 985.
@@ -2096,7 +2087,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 990--991
 
  []
 
-<img_pgadmin005.png, id=73, 1142.2675pt x 731.73375pt>
+<img_pgadmin005.png, id=72, 1142.2675pt x 731.73375pt>
 File: img_pgadmin005.png Graphic file (type png)
 
 <use img_pgadmin005.png>
@@ -2152,7 +2143,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 999--1000
 
  []
 
-<img_archi.png, id=74, 735.49782pt x 496.10344pt>
+<img_archi.png, id=73, 735.49782pt x 496.10344pt>
 File: img_archi.png Graphic file (type png)
  <use img_archi.png>
 Package pdftex.def Info: img_archi.png used on input line 1005.
@@ -2162,9 +2153,13 @@ Overfull \hbox (115.74802pt too wide) in paragraph at lines 1005--1006
  [] 
  []
 
-<img_direc.png, id=75, 787.14075pt x 504.6855pt>
+[12 <C:/Users/최은희/Documents/SmartBrochure/img_pgadmin002.png> <C:/Users/�
+��은희/Documents/SmartBrochure/img_pgadmin003.png> <C:/Users/최은희/Docume
+nts/SmartBrochure/img_pgadmin004.png> <C:/Users/최은희/Documents/SmartBrochu
+re/img_pgadmin005.png>] <img_direc.png, id=81, 787.14075pt x 504.6855pt>
 File: img_direc.png Graphic file (type png)
- <use img_direc.png>
+
+<use img_direc.png>
 Package pdftex.def Info: img_direc.png used on input line 1012.
 (pdftex.def)             Requested size: 393.56941pt x 252.34213pt.
 
@@ -2173,10 +2168,6 @@ Overfull \hbox (141.56941pt too wide) in paragraph at lines 1012--1013
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12 <./img_pgadmin002.png> <./img_pgadmin003.png> <./img_pgadmin004.png> <./im
-g_pgadmin005.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 1016--1018
 
  []
@@ -3895,7 +3886,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1019--1139
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./img_archi.png> <./img_direc.png>]
+ [13 <C:/Users/최은희/Documents/SmartBrochure/img_archi.png> <C:/Users/최�
+�희/Documents/SmartBrochure/img_direc.png>]
 Underfull \vbox (badness 3907) has occurred while \output is active []
 
 
@@ -3938,7 +3930,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20]
-<img_flowchart.jpg, id=109, 722.7pt x 426.59375pt>
+<img_flowchart.jpg, id=108, 722.7pt x 426.59375pt>
 File: img_flowchart.jpg Graphic file (type jpg)
  <use img_flowchart.jpg>
 Package pdftex.def Info: img_flowchart.jpg used on input line 1144.
@@ -4273,7 +4265,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1151--1152
 
  []
 
-<img_serverFlowchart.png, id=110, 1096.095pt x 747.79375pt>
+<img_serverFlowchart.png, id=109, 1096.095pt x 747.79375pt>
 File: img_serverFlowchart.png Graphic file (type png)
 
 <use img_serverFlowchart.png>
@@ -4287,10 +4279,10 @@ Overfull \hbox (296.04616pt too wide) in paragraph at lines 1155--1156
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21 <./img_flowchart.jpg>] <img_capture01.jpg, id=114, 722.7pt x 1284.8pt>
+ [21 <C:/Users/최은희/Documents/SmartBrochure/img_flowchart.jpg>]
+<img_capture01.jpg, id=113, 722.7pt x 1284.8pt>
 File: img_capture01.jpg Graphic file (type jpg)
-
-<use img_capture01.jpg>
+ <use img_capture01.jpg>
 Package pdftex.def Info: img_capture01.jpg used on input line 1164.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
@@ -4641,11 +4633,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1160--1169
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./img_serverFlowchart.png>] <img_capture02.jpg, id=119, 722.7pt x 1284.8p
-t>
+ [22 <C:/Users/최은희/Documents/SmartBrochure/img_serverFlowchart.png>]
+<img_capture02.jpg, id=118, 722.7pt x 1284.8pt>
 File: img_capture02.jpg Graphic file (type jpg)
-
-<use img_capture02.jpg>
+ <use img_capture02.jpg>
 Package pdftex.def Info: img_capture02.jpg used on input line 1173.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
@@ -4683,7 +4674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1170--1178
 
  []
 
-<img_capture03.jpg, id=120, 722.7pt x 1284.8pt>
+<img_capture03.jpg, id=119, 722.7pt x 1284.8pt>
 File: img_capture03.jpg Graphic file (type jpg)
  <use img_capture03.jpg>
 Package pdftex.def Info: img_capture03.jpg used on input line 1183.
@@ -4693,7 +4684,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1179--1188
 
  []
 
-<img_capture04.jpg, id=121, 722.7pt x 1284.8pt>
+<img_capture04.jpg, id=120, 722.7pt x 1284.8pt>
 File: img_capture04.jpg Graphic file (type jpg)
  <use img_capture04.jpg>
 Package pdftex.def Info: img_capture04.jpg used on input line 1192.
@@ -4733,8 +4724,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1189--1197
 
  []
 
-[23 <./img_capture01.jpg> <./img_capture02.jpg> <./img_capture03.jpg>]
-<img_capture05.jpg, id=125, 722.7pt x 1284.8pt>
+[23 <C:/Users/최은희/Documents/SmartBrochure/img_capture01.jpg> <C:/Users/�
+�은희/Documents/SmartBrochure/img_capture02.jpg> <C:/Users/최은희/Document
+s/SmartBrochure/img_capture03.jpg>]
+<img_capture05.jpg, id=124, 722.7pt x 1284.8pt>
 File: img_capture05.jpg Graphic file (type jpg)
  <use img_capture05.jpg>
 Package pdftex.def Info: img_capture05.jpg used on input line 1201.
@@ -4749,7 +4742,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1198--1206
 
  []
 
-<img_capture06.jpg, id=126, 722.7pt x 1284.8pt>
+<img_capture06.jpg, id=125, 722.7pt x 1284.8pt>
 File: img_capture06.jpg Graphic file (type jpg)
  <use img_capture06.jpg>
 Package pdftex.def Info: img_capture06.jpg used on input line 1210.
@@ -4777,10 +4770,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1207--1215
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [24 <./img_capture04.jpg> <./img_capture05.jpg> <./img_capture06.jpg>]
-<img_capture07.jpg, id=130, 722.7pt x 1284.8pt>
+ [24 <C:/Users/최은희/Documents/SmartBrochure/img_capture04.jpg> <C:/Users/�
+��은희/Documents/SmartBrochure/img_capture05.jpg> <C:/Users/최은희/Documen
+ts/SmartBrochure/img_capture06.jpg>] <img_capture07.jpg, id=129, 722.7pt x 1284
+.8pt>
 File: img_capture07.jpg Graphic file (type jpg)
- <use img_capture07.jpg>
+
+<use img_capture07.jpg>
 Package pdftex.def Info: img_capture07.jpg used on input line 1219.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
@@ -4823,7 +4819,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
 
  []
 
-<img_capture08.jpg, id=131, 722.7pt x 1284.8pt>
+<img_capture08.jpg, id=130, 722.7pt x 1284.8pt>
 File: img_capture08.jpg Graphic file (type jpg)
  <use img_capture08.jpg>
 Package pdftex.def Info: img_capture08.jpg used on input line 1229.
@@ -4933,13 +4929,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
 
  []
 
-<img_capture09.jpg, id=132, 722.7pt x 1284.8pt>
+<img_capture09.jpg, id=131, 722.7pt x 1284.8pt>
 File: img_capture09.jpg Graphic file (type jpg)
  <use img_capture09.jpg>
 Package pdftex.def Info: img_capture09.jpg used on input line 1239.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
-[25 <./img_capture07.jpg> <./img_capture08.jpg>]
+[25 <C:/Users/최은희/Documents/SmartBrochure/img_capture07.jpg> <C:/Users/�
+�은희/Documents/SmartBrochure/img_capture08.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 1244--1245
 
  []
@@ -5059,7 +5056,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1244--1245
 
  []
 
-<img_capture10.jpg, id=137, 722.7pt x 1284.8pt>
+<img_capture10.jpg, id=136, 722.7pt x 1284.8pt>
 File: img_capture10.jpg Graphic file (type jpg)
  <use img_capture10.jpg>
 Package pdftex.def Info: img_capture10.jpg used on input line 1248.
@@ -5179,6 +5176,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1253--1254
 
  []
 
+<<<<<<< HEAD
 [26 <./img_capture09.jpg> <./img_capture10.jpg>]
 <img_install01.jpg, id=141, 722.7pt x 1284.8pt>
 File: img_install01.jpg Graphic file (type jpg)
@@ -5217,6 +5215,11 @@ Package pdftex.def Info: img_install03.jpg used on input line 1279.
 (pdftex.def)             Requested size: 130.08038pt x 231.25401pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
+=======
+[26 <C:/Users/최은희/Documents/SmartBrochure/img_capture09.jpg> <C:/Users/�
+�은희/Documents/SmartBrochure/img_capture10.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 1257--1258
+>>>>>>> 7906b4f54a17f5c63573da079f8fbb94a4e994fc
 
  []
 
@@ -5290,8 +5293,9 @@ Before submitting the final camera ready copy, remember to:
 
 [28
 
-] (./SmartBrochure.aux) ) 
+] (C:\Users\최은희\Documents\SmartBrochure\SmartBrochure.aux) ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  2377 strings out of 493117
  39099 string characters out of 6135433
  151905 words of memory out of 5000000
@@ -5310,6 +5314,25 @@ Output written on SmartBrochure.pdf (28 pages, 5840147 bytes).
 PDF statistics:
  173 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
+=======
+ 2102 strings out of 493921
+ 34655 string characters out of 3147330
+ 143049 words of memory out of 3000000
+ 5389 multiletter control sequences out of 15000+200000
+ 36821 words of font info for 72 fonts, out of 3000000 for 9000
+ 844 hyphenation exceptions out of 8191
+ 27i,7n,21p,1273b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program F
+iles/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
+es/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SmartBrochure.pdf (27 pages, 3760945 bytes).
+PDF statistics:
+ 164 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 7906b4f54a17f5c63573da079f8fbb94a4e994fc
  0 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
