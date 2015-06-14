@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.26)  12 JUN 2015 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.26)  14 JUN 2015 19:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -5180,35 +5180,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 1253--1254
  []
 
 [26 <./img_capture09.jpg> <./img_capture10.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1257--1258
+<img_install01.jpg, id=141, 722.7pt x 1284.8pt>
+File: img_install01.jpg Graphic file (type jpg)
+ <use img_install01.jpg>
+Package pdftex.def Info: img_install01.jpg used on input line 1261.
+(pdftex.def)             Requested size: 130.08038pt x 231.25401pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1266--1267
+
+ []
+
+<img_install02.jpg, id=142, 722.7pt x 1284.8pt>
+File: img_install02.jpg Graphic file (type jpg)
+ <use img_install02.jpg>
+Package pdftex.def Info: img_install02.jpg used on input line 1270.
+(pdftex.def)             Requested size: 130.08038pt x 231.25401pt.
+
+Underfull \hbox (badness 6173) in paragraph at lines 1275--1276
+[]\OT1/ptm/m/n/12 Second, click the [in-stal-la-tion] but-ton and
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 1275--1276
+\OT1/ptm/m/n/12 down-load the [SMART BROCHURE] to your
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1276
+
+ []
+
+<img_install03.jpg, id=143, 722.7pt x 1284.8pt>
+File: img_install03.jpg Graphic file (type jpg)
+ <use img_install03.jpg>
+Package pdftex.def Info: img_install03.jpg used on input line 1279.
+(pdftex.def)             Requested size: 130.08038pt x 231.25401pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
 
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 1259--1260
-[]\OT1/ptm/m/n/12 Enter the Google-Playstore or App-store, and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1259--1260
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1259--1260
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
+
+ []
+
+<img_qrcode.jpg, id=144, 358.33875pt x 358.33875pt>
+File: img_qrcode.jpg Graphic file (type jpg)
+ <use img_qrcode.jpg>
+Package pdftex.def Info: img_qrcode.jpg used on input line 1288.
+(pdftex.def)             Requested size: 143.33296pt x 143.33296pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1259--1260
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1259--1260
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+
+ []
+
+[27 <./img_install01.jpg> <./img_install02.jpg> <./img_install03.jpg> <./img_qr
+code.jpg>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -5220,14 +5288,14 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[27
+[28
 
 ] (./SmartBrochure.aux) ) 
 Here is how much of TeX's memory you used:
- 2357 strings out of 493117
- 38698 string characters out of 6135433
+ 2377 strings out of 493117
+ 39099 string characters out of 6135433
  151905 words of memory out of 5000000
- 5782 multiletter control sequences out of 15000+600000
+ 5798 multiletter control sequences out of 15000+600000
  36821 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  37i,8n,23p,1229b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -5238,10 +5306,10 @@ mi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 sr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/
 texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 14/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SmartBrochure.pdf (27 pages, 3745372 bytes).
+Output written on SmartBrochure.pdf (28 pages, 5840147 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 173 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
